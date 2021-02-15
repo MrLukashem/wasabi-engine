@@ -1,0 +1,2 @@
+/usr/bin/ar qc libwasabi-engine-lib.a  CMakeFiles/wasabi-engine-lib.dir/main.cpp.o
+/usr/bin/ranlib libwasabi-engine-lib.a

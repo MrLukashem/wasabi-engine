@@ -1,0 +1,12 @@
+/home/lmerta/Projects/wasabi-engine/Debug/CMakeFiles/rebuild_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/CMakeFiles/edit_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/CMakeFiles/rebuild_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/CMakeFiles/edit_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/CMakeFiles/wasabi-engine-main.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/CMakeFiles/wasabi-engine-lib.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/core/CMakeFiles/rebuild_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/core/CMakeFiles/edit_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/physics/CMakeFiles/rebuild_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/physics/CMakeFiles/edit_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/renderer/CMakeFiles/rebuild_cache.dir
+/home/lmerta/Projects/wasabi-engine/Debug/src/wasabi/renderer/CMakeFiles/edit_cache.dir
