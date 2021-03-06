@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/wasabi-engine-main.dir/main.cpp.o  -o wasabi-engine-main 

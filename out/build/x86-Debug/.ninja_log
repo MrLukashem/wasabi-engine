@@ -1,0 +1,7 @@
+# ninja log v5
+0	7	0	clean	9992afb1f91dc381
+6	93	636152887	src/wasabi/core/CMakeFiles/core.dir/Object.cpp.obj	84fdcb0a1d65d13
+94	198	636152887	src/wasabi/core/core.lib	314ee71dbbdc5066
+4	468	636152887	src/wasabi/CMakeFiles/wasabi-engine-main.dir/main.cpp.obj	e6d2dc27f6588abe
+1	553	636152887	src/wasabi/CMakeFiles/wasabi-engine-lib.dir/Scene.cpp.obj	b182da9007b93487
+553	620	636152887	src/wasabi/wasabi-engine-lib.lib	82f2d3fd6c3946d9
