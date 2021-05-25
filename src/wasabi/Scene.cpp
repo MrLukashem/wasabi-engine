@@ -1,19 +1,29 @@
 
 #include "Scene.hpp"
 
+#include "core/Window.hpp"
+#include "core/WasabiEngine.hpp"
+#include "core/WindowBuilder.hpp"
 
 
 namespace wasabi {
 
-Scene& Scene::addObject(std::shared_ptr<WObject> object) {
-	return *this;
+Scene::Scene() = default;
+
+Scene::~Scene() = default;
+
+void Scene::setWindow() noexcept {
+	auto window = core::WindowBuilder::create()
+		.width(800)
+		.height(600)
+		.title("Wasabi Window")
+		.build();
+
+	m_engine = std::make_unique<core::WasabiEngine>(std::move(window));
 }
 
-Scene& Scene::removeObject(const WObject& object) {
-	return *this;
-}
-
-void Scene::setWindow() {
+void Scene::loop() noexcept {
+	m_engine->loop();
 }
 
 }

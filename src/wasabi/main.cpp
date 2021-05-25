@@ -16,4 +16,6 @@ int main() {
 	std::cout << "Hello World qewqe\n";
 
 	Test t{};
+	t.setWindow();
+	t.loop();
 }
