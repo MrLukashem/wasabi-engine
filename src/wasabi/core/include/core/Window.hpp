@@ -1,6 +1,8 @@
 
 #pragma once
 
+#include "platform/WindowHandle.hpp"
+
 #include <memory>
 
 
@@ -14,6 +16,7 @@ struct Window {
 	virtual void show() const noexcept = 0;
 	virtual void close() noexcept = 0;
 	virtual std::unique_ptr<Event> pollEvent() noexcept = 0;
+	virtual WindowHandle getNativeHandle() const noexcept = 0;
 };
 
 } // namespace wasabi::core

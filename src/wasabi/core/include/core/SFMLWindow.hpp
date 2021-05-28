@@ -5,7 +5,7 @@
 
 #include <string>
 
-#include "SFML/Window.hpp"
+#include <SFML/Window.hpp>
 
 
 namespace wasabi::core {
@@ -18,6 +18,7 @@ public:
 	void show() const noexcept override;
 	void close() noexcept override;
 	std::unique_ptr<Event> pollEvent() noexcept override;
+	WindowHandle getNativeHandle() const noexcept override;
 private:
 	sf::Window m_window;
 };

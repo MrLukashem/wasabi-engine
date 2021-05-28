@@ -61,4 +61,8 @@ std::unique_ptr<Event> SFMLWindow::pollEvent() noexcept {
 	}
 }
 
+WindowHandle SFMLWindow::getNativeHandle() const noexcept {
+	return m_window.getSystemHandle();
+}
+
 } // namespace wasabi::core

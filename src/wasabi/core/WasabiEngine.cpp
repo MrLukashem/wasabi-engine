@@ -21,14 +21,14 @@ namespace wasabi::core {
 using Entity = ecs::Entity;
 
 WasabiEngine::WasabiEngine(std::shared_ptr<Window> window)
-	: m_running{ false }, m_world{},  m_window{ window } {}
+	: m_running{false}, m_world{}, m_window{window} {}
 
 WasabiEngine::~WasabiEngine() = default;
 
 void WasabiEngine::loop() noexcept {
 	m_running = true;
 	EventsStack eventStack(m_window);
-	rendering::VulkanRenderer renderer{};
+	rendering::VulkanRenderer renderer{m_window->getNativeHandle()};
 
 	while (m_running) {
 		while (const auto event = eventStack.popEvent()) {
