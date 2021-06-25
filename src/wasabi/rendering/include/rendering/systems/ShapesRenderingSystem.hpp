@@ -28,10 +28,6 @@ public:
 	void render() noexcept;
 private:
 	void renderEntity(components::Transform& transform, components::Shape& shape) noexcept;
-	std::size_t makeHash(const components::Shape& shape) const noexcept;
-	VertexArray createVertexArray(const components::Shape& shape) const noexcept;
-	VertexArray createVertexArray(const components::Shape::Rectangle& rect) const noexcept;
-	VertexArray createVertexArray(const components::Shape::Circle& circle) const noexcept;
 
 	ecs::WorldSupervisor& m_world;
 	std::map<std::size_t, VertexArray> m_verticesArrays;

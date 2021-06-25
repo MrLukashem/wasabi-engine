@@ -17,9 +17,9 @@ find_package(Vulkan REQUIRED)
 #set(SPDLOG_ROOT ${PROJECT_SOURCE_DIR}/external/spdlog/build/CMakeFiles/Export/lib/cmake/spdlog)
 
 #set(SFML_DIR ${PROJECT_SOURCE_DIR}/external/SFML/cmake/)
-#find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
+find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
-#add_subdirectory(external/spdlog)
+add_subdirectory(external/spdlog)
 add_subdirectory(${SOURCE_ROOT})
 #add_subdirectory(${SFML_ROOT})
 

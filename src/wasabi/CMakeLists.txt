@@ -4,6 +4,8 @@ set(PLATFORM_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/platform/include)
 
 #find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
 
+add_subdirectory(utils)
+add_subdirectory(platform)
 add_subdirectory(ecs)
 add_subdirectory(rendering)
 add_subdirectory(physics)
