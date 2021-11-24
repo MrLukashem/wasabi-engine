@@ -15,23 +15,11 @@ using namespace wasabi::rendering;
 
 auto logger = spdlog::stdout_color_mt("VulkanRenderer");
 
-details::ExtensionsNames getPlatformExtensions() {
-	if (wasabi::getPlatform() == wasabi::Platform::WINDOWS) {
-		return {
-			VK_KHR_WIN32_SURFACE_EXTENSION_NAME,
-			VK_KHR_SURFACE_EXTENSION_NAME,
-			VK_EXT_DEBUG_REPORT_EXTENSION_NAME
-		};
-	}
-
-	return {};
-}
-
 details::ExtensionsNames getPhysicalDeviceExtenions() {
 	return {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 }
 
-details::SwapChainSetup chooseSwapChainSetup(details::SwapChainDetails& details) {
+details::SwapChainSetup chooseSwapChainSetup(const details::SwapChainDetails& details) {
 	const auto& formatItr = std::find_if(
 		details.formats.begin(),
 		details.formats.end(),
@@ -63,28 +51,29 @@ T getOrThrow(const std::optional<T>& opt, const std::string& msg) {
 namespace wasabi::rendering {
 
 VulkanRenderer::VulkanRenderer(WindowHandle nativeHandle) {
-	logger->info("ctr begin");
+    logger->info("ctr begin");
 
-	m_instance = getOrThrow(
-		details::createVkInstance(getPlatformExtensions()),
-		"Error during vk instance creation");
+    m_instance = getOrThrow(
+        details::createVkInstance(details::getPlatformExtensions()),
+        "Error during vk instance creation");
 
-	m_surface = getOrThrow(
-		details::createVkSurface(m_instance, nativeHandle),
-		"Error during vk surface creation");
+    m_surface = getOrThrow(
+        details::createVkSurface(m_instance, nativeHandle),
+        "Error during vk surface creation");
 
-	const auto& physicalDeviceOpt = details::getTheMostSuitableDevice(m_instance,
-		[] (const auto& device) {
-			return details::supportsDeviceExtensions(device, getPhysicalDeviceExtenions());
-		});
-	m_physicalDevice = getOrThrow(physicalDeviceOpt, "No device that meets criteria");
+    const auto &physicalDeviceOpt = details::getTheMostSuitableDevice(m_instance,
+                                                                      [](const auto &device) {
+                                                                          return details::supportsDeviceExtensions(
+                                                                              device, getPhysicalDeviceExtenions());
+                                                                      });
+    m_physicalDevice = getOrThrow(physicalDeviceOpt, "No device that meets criteria");
 
-	createDevice();
-	vkGetDeviceQueue(m_device, 0, 0, &m_graphicsQueue);
-	createSwapChain();
-	createImagesView();
-	createRenderPass();
-	createGraphicsPipeline();
+    createDevice();
+    vkGetDeviceQueue(m_device, 0, 0, &m_graphicsQueue);
+    createSwapChain();
+    createImagesView();
+    createRenderPass();
+    createGraphicsPipeline();
 }
 
 void VulkanRenderer::createDevice() {

@@ -1,5 +1,6 @@
 
 #pragma once
+#ifdef _WIN32
 
 #include "Window.hpp"
 
@@ -24,3 +25,5 @@ private:
 };
 
 } // namespace wasabi::core
+
+#endif

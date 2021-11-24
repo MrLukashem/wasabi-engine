@@ -3,6 +3,7 @@
 
 #include "ecs/Entity.hpp"
 
+#include <algorithm>
 #include <bitset>
 #include <stack>
 #include <iterator>

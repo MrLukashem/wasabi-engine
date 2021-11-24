@@ -1,6 +1,9 @@
 
 #include "rendering/details/VulkanUtils.hpp"
 
+#include "rendering/details/linux/VulkanLinuxUtils.hpp"
+#include "rendering/details/win/VulkanWinUtils.hpp"
+
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
@@ -14,6 +17,9 @@ auto logger = spdlog::stdout_color_mt("VulkanUtils");
 } // namespace
 
 namespace wasabi::rendering::details {
+
+using namespace lx;
+using namespace win;
 
 std::optional<uint32_t> findQueueFamilyIndex(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface) {
 	uint32_t queueFamilyCount{};
@@ -53,33 +59,46 @@ SwapChainDetails querySwapChainDetails(VkPhysicalDevice physicalDevice, VkSurfac
 	return details;
 }
 
-std::vector<const char*> getAvailableExtensions(
+ExtensionsNames getPlatformExtensions() {
+    return getPlatformExtensionsInternal();
+}
+
+std::vector<const char*> getNotAvailableExtensions(
 	const std::vector<VkExtensionProperties>& supportedExtensions,
 	const ExtensionsNames& requestedExtensionsNames
 ) {
-	std::vector<const char*> availableExtensions{};
+	std::vector<const char*> notAvailableExtensions{};
 	for (const auto& extension : supportedExtensions) {
 		if (std::find_if(requestedExtensionsNames.begin(), requestedExtensionsNames.end(),
 			[&extension] (const auto requestedExtension)
 			{
 				return std::strcmp(requestedExtension, extension.extensionName) == 0;
-			}) != requestedExtensionsNames.end()) {
+			}) == requestedExtensionsNames.end()) {
 
-			availableExtensions.emplace_back(extension.extensionName);
+			notAvailableExtensions.emplace_back(extension.extensionName);
 		}
 	}
 
-	return availableExtensions;
+	return notAvailableExtensions;
 }
 
 bool supportsInstanceExtensions(const ExtensionsNames& requestedExtensions) {
 	uint32_t extensionsCount{};
 	vkEnumerateInstanceExtensionProperties(nullptr, &extensionsCount, nullptr);
-
 	std::vector<VkExtensionProperties> extensions(extensionsCount);
 	vkEnumerateInstanceExtensionProperties(nullptr, &extensionsCount, extensions.data());
 
-	return getAvailableExtensions(extensions, requestedExtensions).size() == requestedExtensions.size();
+    const auto& notAvailableExtensions = getNotAvailableExtensions(extensions, requestedExtensions);
+    if (!notAvailableExtensions.empty()) {
+        logger->warn("Some extensions are not supported:");
+        for (const auto& ext : getNotAvailableExtensions(extensions, requestedExtensions)) {
+            logger->warn(ext);
+        }
+
+        return false;
+    }
+
+    return true;
 }
 
 bool supportsDeviceExtensions(
@@ -89,9 +108,9 @@ bool supportsDeviceExtensions(
 	vkEnumerateDeviceExtensionProperties(physicalDevice, nullptr, &extensionsCount, nullptr);
 
 	std::vector<VkExtensionProperties> extensions(extensionsCount);
-	vkEnumerateDeviceExtensionProperties(physicalDevice, nullptr, &extensionsCount, extensions.data());
+	const auto vkResult = vkEnumerateDeviceExtensionProperties(physicalDevice, nullptr, &extensionsCount, extensions.data());
 
-	return getAvailableExtensions(extensions, requestedExtensions).size() == requestedExtensions.size();
+	return vkResult == VK_SUCCESS;
 }
 
 std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtensions) {
@@ -125,22 +144,7 @@ std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtens
 }
 
 std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle) {
-	if (wasabi::getPlatform() == wasabi::Platform::WINDOWS) {
-		VkWin32SurfaceCreateInfoKHR info{};
-		info.hinstance = GetModuleHandle(nullptr);
-		info.hwnd = nativeHandle;
-		info.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
-
-		VkSurfaceKHR surface{};
-		if (vkCreateWin32SurfaceKHR(instance, &info, nullptr, &surface) != VK_SUCCESS) {
-			logger->error("failed to create window surface!");
-			return {};
-		}
-
-		return surface;
-	}
-
-	return {};
+    return details::lx::createVkSurface(instance, nativeHandle);
 }
 
 std::optional<VkPhysicalDevice> getTheMostSuitableDevice(

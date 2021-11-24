@@ -23,7 +23,7 @@ public:
 
 		m_hashToId[getHash<C>()] = ++m_componentIdCounter;
 		const auto& tag = m_entitiesSupervisor.updateTag(
-			entity, ComponentsTag().set(m_componentIdCounter, true));
+			entity, detail::ComponentsTag().set(m_componentIdCounter, true));
 
 		const auto& viewItr = m_worldViews.find(tag);
 		if (viewItr == m_worldViews.end()) {

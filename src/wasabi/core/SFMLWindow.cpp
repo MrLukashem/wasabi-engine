@@ -1,5 +1,5 @@
 
-#pragma once
+#ifdef _WIN32
 
 #include "SFMLWindow.hpp"
 
@@ -66,3 +66,5 @@ WindowHandle SFMLWindow::getNativeHandle() const noexcept {
 }
 
 } // namespace wasabi::core
+
+#endif

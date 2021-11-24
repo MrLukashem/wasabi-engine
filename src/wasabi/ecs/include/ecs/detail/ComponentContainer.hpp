@@ -40,9 +40,9 @@ public:
 		return m_data[entity].component;
 	}
 
-	bool isContainedByEntity(const C& component) const {
-		return m_data[entity].isContainedByEntity;
-	}
+//	bool isContainedByEntity(const C& component) const {
+//		return m_data[entity].isContainedByEntity;
+//	}
 private:
 	std::array<ComponentData, N> m_data;
 };

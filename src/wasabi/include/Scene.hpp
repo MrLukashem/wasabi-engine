@@ -2,16 +2,13 @@
 #pragma once
 
 #include "Object.hpp"
+#include "WasabiEngine.hpp"
 
 #include <memory>
 #include <vector>
 
 
 namespace wasabi {
-
-namespace core {
-class WasabiEngine;
-} // namespace core
 
 // scene->attach<Transform>(entity, pos);
 // scene->attach<Shape>(entity, 
@@ -28,13 +25,13 @@ public:
 	}
 
 	template <typename C, typename... Args>
-	void attach(Object& entity, Args... args) const noexcept {
-		m_engine.attach(object.m_entity, C{args...});
+	void attach(Object& object, Args... args) const noexcept {
+        m_engine->attach(object.m_entity, C{args...});
 	}
 
 	template <typename C>
 	void dettach(Object& object, C&& component) const noexcept {
-		m_engine.dettach(object.m_entity, std::forward<T>(component));
+		m_engine->dettach(object.m_entity, std::forward<C>(component));
 	}
 
 	virtual void onUpdate(const float dt) noexcept {};

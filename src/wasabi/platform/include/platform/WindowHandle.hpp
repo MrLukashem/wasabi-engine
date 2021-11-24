@@ -8,3 +8,10 @@
 using WindowHandle = HWND;
 #endif // _WIN32
 
+#ifdef  __linux__
+struct wl_display;
+
+struct WindowHandle {
+    wl_display* wlDisplay;
+};
+#endif

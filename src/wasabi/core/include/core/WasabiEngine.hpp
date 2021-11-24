@@ -30,12 +30,12 @@ public:
 
 	template <typename C>
 	void attach(const ecs::Entity entity, C&& component) noexcept {
-		m_world.addComponent(entity, std::forward<C>(component));
+		m_world.attach(entity, std::forward<C>(component));
 	}
 
 	template <typename C>
 	void dettach(const ecs::Entity entity, C&& component) noexcept {
-		m_world.removeComponent(entity, std::forward<T>(component));
+		m_world.dettach(entity, std::forward<C>(component));
 	}
 
 	void visit(MauseClickEvent& event) override;

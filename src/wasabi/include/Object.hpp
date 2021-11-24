@@ -13,7 +13,6 @@ public:
 	Object(WasabiEngine& engine);
 	virtual ~Object() = default;
 
-private:
 	WasabiEngine& m_engine;
 	const ecs::Entity m_entity;
 };

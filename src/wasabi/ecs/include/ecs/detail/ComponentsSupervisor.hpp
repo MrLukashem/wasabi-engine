@@ -30,8 +30,8 @@ public:
 private:
 	template <typename C>
 	ComponentContainer<C>& getContainerByComponent() {
-		auto& pair = m_typeToContainer.try_emplace(getId<C>(), std::make_unique<ComponentContainer<C>>());
-		auto& container = (pair.first)->second;
+		const auto& pair = m_typeToContainer.try_emplace(getId<C>(), std::make_unique<ComponentContainer<C>>());
+		const auto& container = (pair.first)->second;
 		return *static_cast<ComponentContainer<C>*>(container.get());
 	}
 

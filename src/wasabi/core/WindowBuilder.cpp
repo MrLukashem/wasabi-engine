@@ -2,6 +2,7 @@
 #include "WindowBuilder.hpp"
 
 #include "SFMLWindow.hpp"
+#include "GLFWWindow.hpp"
 
 
 namespace wasabi::core {
@@ -11,7 +12,12 @@ WindowBuilder::WindowBuilder() : m_height{}, m_width{}, m_title{} {}
 WindowBuilder::~WindowBuilder() = default;
 
 std::unique_ptr<Window> WindowBuilder::build() const noexcept {
-	return std::make_unique<SFMLWindow>(m_width, m_height, m_title);
+#ifdef _WIN32
+    return std::make_unique<SFMLWindow>(m_width, m_height, m_title);
+#endif
+#ifdef __linux__
+    return std::make_unique<GLFWWindow>();
+#endif
 }
 
 WindowBuilder& WindowBuilder::width(const uint32_t width) noexcept {

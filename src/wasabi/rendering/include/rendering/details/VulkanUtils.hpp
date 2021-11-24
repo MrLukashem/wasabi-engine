@@ -5,8 +5,9 @@
 #include "platform/WindowHandle.hpp"
 #include "utils/defs.hpp"
 
-#include <Vulkan/Vulkan.hpp>
+#include <vulkan/vulkan.h>
 
+#include <algorithm>
 #include <optional>
 #include <vector>
 #include <type_traits>
@@ -33,6 +34,8 @@ struct SwapChainSetup {
 std::optional<uint32_t> findQueueFamilyIndex(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface);
 
 SwapChainDetails querySwapChainDetails(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface);
+
+ExtensionsNames getPlatformExtensions();
 
 std::vector<const char*> getAvailableExtensions(
 	const std::vector<VkExtensionProperties>& supportedExtensions,
@@ -81,7 +84,7 @@ std::optional<VK_T> create(Args&&... args) {
 
 template <typename... Args>
 std::optional<VkImageView> create(Args&&... args) {
-	return createImageView(std::forward<Args>(args...));
+	return createImageView(args...);
 }
 
 template <typename VK_T, typename... Args>
