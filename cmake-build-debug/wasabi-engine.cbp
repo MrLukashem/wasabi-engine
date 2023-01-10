@@ -5,2005 +5,590 @@
 		<Option title="wasabi-engine"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\external\;CMake Files\external\SFML\;CMake Files\external\SFML\cmake\;CMake Files\external\SFML\cmake\Modules\;CMake Files\external\SFML\tools\;CMake Files\external\SFML\tools\pkg-config\;CMake Files\external\SFML\src\;CMake Files\external\SFML\src\SFML\;CMake Files\external\SFML\src\SFML\System\;CMake Files\external\SFML\src\SFML\Window\;CMake Files\external\SFML\src\SFML\Network\;CMake Files\external\SFML\src\SFML\Graphics\;CMake Files\external\SFML\src\SFML\Audio\;CMake Files\external\spdlog\;CMake Files\external\spdlog\cmake\;CMake Files\src\;CMake Files\src\wasabi\;CMake Files\src\wasabi\utils\;CMake Files\src\wasabi\platform\;CMake Files\src\wasabi\ecs\;CMake Files\src\wasabi\rendering\;CMake Files\src\wasabi\physics\;CMake Files\src\wasabi\core\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\glm\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\homebrew\;CMake Files\..\..\..\..\opt\homebrew\lib\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\spdlog\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\fmt\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glm\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glfw3\;CMake Files\src\;CMake Files\src\wasabi\;CMake Files\src\wasabi\utils\;CMake Files\src\wasabi\platform\;CMake Files\src\wasabi\ecs\;CMake Files\src\wasabi\rendering\;CMake Files\src\wasabi\physics\;CMake Files\src\wasabi\core\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/strip">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/local">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="list_install_components">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="package">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 package"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="package_source">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 package_source"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="spdlog">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/libspdlogd.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_EXPORT"/>
-					<Add option="-DFMT_SHARED"/>
-					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 spdlog"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="spdlog/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/libspdlogd.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_EXPORT"/>
-					<Add option="-DFMT_SHARED"/>
-					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 spdlog/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="wasabi-engine-lib">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/libwasabi-engine-lib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
-					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-lib"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="wasabi-engine-lib/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/libwasabi-engine-lib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
-					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-lib/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-engine-main">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/wasabi-engine-main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/wasabi-engine-main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
 					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/opt/homebrew/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-main"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-engine-main/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/wasabi-engine-main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/wasabi-engine-main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
 					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/opt/homebrew/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-main/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wasabi-engine-lib">
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/libwasabi-engine-lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSPDLOG_SHARED_LIB"/>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/opt/homebrew/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-lib"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wasabi-engine-lib/fast">
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/libwasabi-engine-lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSPDLOG_SHARED_LIB"/>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/opt/homebrew/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 wasabi-engine-lib/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-utils">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/libwasabi-utils.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/libwasabi-utils.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils"/>
 				<Option object_output="./"/>
-				<Option type="3"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 wasabi-utils"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 wasabi-utils"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-utils/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/libwasabi-utils.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/libwasabi-utils.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils"/>
 				<Option object_output="./"/>
-				<Option type="3"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 wasabi-utils/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 wasabi-utils/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/utils/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-platform">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/libwasabi-platform.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/libwasabi-platform.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform"/>
 				<Option object_output="./"/>
-				<Option type="3"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 wasabi-platform"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 wasabi-platform"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-platform/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/libwasabi-platform.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/libwasabi-platform.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform"/>
 				<Option object_output="./"/>
-				<Option type="3"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 wasabi-platform/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 wasabi-platform/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/platform/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-ecs">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/libwasabi-ecs.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/libwasabi-ecs.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 wasabi-ecs"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 wasabi-ecs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-ecs/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/libwasabi-ecs.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/libwasabi-ecs.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 wasabi-ecs/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 wasabi-ecs/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/ecs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-rendering">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/libwasabi-rendering.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/libwasabi-rendering.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
 					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/opt/homebrew/Cellar/glm/0.9.9.8/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/opt/homebrew/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 wasabi-rendering"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 wasabi-rendering"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="wasabi-rendering/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/libwasabi-rendering.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/libwasabi-rendering.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
 					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/opt/homebrew/Cellar/glm/0.9.9.8/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/opt/homebrew/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 wasabi-rendering/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 wasabi-rendering/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/rendering/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="core">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/libcore.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/libcore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DSFML_STATIC"/>
 					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
 					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/opt/homebrew/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 core"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 core"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="core/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/libcore.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core"/>
+				<Option output="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/libcore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DSFML_STATIC"/>
 					<Add option="-DSPDLOG_SHARED_LIB"/>
-					<Add option="-DFMT_SHARED"/>
 					<Add option="-DSPDLOG_COMPILED_LIB"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/spdlog/include"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add option="-DSPDLOG_FMT_EXTERNAL"/>
+					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DFMT_SHARED"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/components/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/include"/>
+					<Add directory="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include"/>
+					<Add directory="/opt/homebrew/lib"/>
+					<Add directory="/opt/homebrew/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 core/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-system">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-system-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 sfml-system"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-system/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-system-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 sfml-system/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-window">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-window-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/glad/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/vulkan"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 sfml-window"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-window/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-window-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/glad/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/vulkan"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 sfml-window/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-network">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-network-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 sfml-network"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-network/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-network-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 sfml-network/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-graphics">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-graphics-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSTBI_FAILURE_USERMSG"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/stb_image"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/glad/include"/>
-					<Add directory="/usr/include/freetype2"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 sfml-graphics"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-graphics/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-graphics-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSTBI_FAILURE_USERMSG"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/stb_image"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/extlibs/headers/glad/include"/>
-					<Add directory="/usr/include/freetype2"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 sfml-graphics/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-audio">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-audio-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DOV_EXCLUDE_STATIC_CALLBACKS"/>
-					<Add option="-DFLAC__NO_DLL"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/usr/include/AL"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 sfml-audio"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sfml-audio/fast">
-				<Option output="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/lib/libsfml-audio-d.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DOV_EXCLUDE_STATIC_CALLBACKS"/>
-					<Add option="-DFLAC__NO_DLL"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/include"/>
-					<Add directory="/home/ryuu/Projects/wasabi-engine/external/SFML/src"/>
-					<Add directory="/usr/include/AL"/>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 sfml-audio/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/ryuu/Projects/wasabi-engine/cmake-build-debug/external/SFML/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 core/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ryuu/Projects/wasabi-engine/cmake-build-debug/src/wasabi/core/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/AlResource.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/Export.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/InputSoundFile.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/Listener.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/Music.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/OutputSoundFile.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/Sound.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundBuffer.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundBufferRecorder.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundFileFactory.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundFileFactory.inl">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundFileReader.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundFileWriter.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundRecorder.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundSource.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Audio/SoundStream.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/BlendMode.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/CircleShape.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Color.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/ConvexShape.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Drawable.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Export.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Font.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Glsl.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Glsl.inl">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Glyph.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Image.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/PrimitiveType.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Rect.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Rect.inl">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/RectangleShape.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/RenderStates.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/RenderTarget.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/RenderTexture.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/RenderWindow.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Shader.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Shape.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Sprite.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Text.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Texture.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Transform.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Transformable.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/Vertex.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/VertexArray.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/VertexBuffer.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Graphics/View.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/Export.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/Ftp.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/Http.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/IpAddress.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/Packet.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/Socket.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/SocketHandle.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/SocketSelector.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/TcpListener.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/TcpSocket.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Network/UdpSocket.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Clock.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Err.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Export.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/FileInputStream.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/InputStream.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Lock.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/MemoryInputStream.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Mutex.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/NativeActivity.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/NonCopyable.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Sleep.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/String.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/String.inl">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Thread.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Thread.inl">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/ThreadLocal.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/ThreadLocalPtr.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/ThreadLocalPtr.inl">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Time.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Utf.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Utf.inl">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Vector2.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Vector2.inl">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Vector3.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/System/Vector3.inl">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Clipboard.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Context.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/ContextSettings.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Cursor.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Event.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Export.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/GlResource.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Joystick.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Keyboard.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Mouse.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Sensor.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Touch.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/VideoMode.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Vulkan.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/Window.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/WindowBase.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/WindowHandle.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/include/SFML/Window/WindowStyle.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/ALCheck.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/ALCheck.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/AlResource.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/AudioDevice.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/AudioDevice.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/InputSoundFile.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/Listener.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/Music.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/OutputSoundFile.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/Sound.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundBuffer.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundBufferRecorder.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileFactory.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileReaderFlac.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileReaderFlac.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileReaderOgg.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileReaderOgg.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileReaderWav.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileReaderWav.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileWriterFlac.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileWriterFlac.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileWriterOgg.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileWriterOgg.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileWriterWav.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundFileWriterWav.hpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundRecorder.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundSource.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/SoundStream.cpp">
-			<Option target="sfml-audio"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/BlendMode.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/CircleShape.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Color.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/ConvexShape.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Font.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/GLCheck.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/GLCheck.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/GLExtensions.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/GLExtensions.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Glsl.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Image.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/ImageLoader.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/ImageLoader.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RectangleShape.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderStates.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTarget.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTexture.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTextureImpl.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTextureImpl.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTextureImplDefault.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTextureImplDefault.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTextureImplFBO.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderTextureImplFBO.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/RenderWindow.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Shader.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Shape.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Sprite.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Text.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Texture.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/TextureSaver.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/TextureSaver.hpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Transform.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Transformable.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/Vertex.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/VertexArray.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/VertexBuffer.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/View.cpp">
-			<Option target="sfml-graphics"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/Ftp.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/Http.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/IpAddress.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/Packet.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/Socket.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/SocketImpl.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/SocketSelector.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/TcpListener.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/TcpSocket.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/UdpSocket.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/Unix/SocketImpl.cpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/Unix/SocketImpl.hpp">
-			<Option target="sfml-network"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Clock.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Err.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/FileInputStream.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Lock.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/MemoryInputStream.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Mutex.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Sleep.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/String.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Thread.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/ThreadLocal.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Time.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/ClockImpl.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/ClockImpl.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/MutexImpl.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/MutexImpl.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/SleepImpl.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/SleepImpl.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/ThreadImpl.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/ThreadImpl.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/ThreadLocalImpl.cpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/Unix/ThreadLocalImpl.hpp">
-			<Option target="sfml-system"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Clipboard.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/ClipboardImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Context.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Cursor.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/CursorImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/EGLCheck.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/EGLCheck.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/EglContext.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/EglContext.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/GlContext.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/GlContext.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/GlResource.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/InputImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Joystick.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/JoystickImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/JoystickManager.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/JoystickManager.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Keyboard.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Mouse.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Sensor.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/SensorImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/SensorManager.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/SensorManager.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Touch.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/ClipboardImpl.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/ClipboardImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/CursorImpl.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/CursorImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/Display.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/Display.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/GlxContext.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/GlxContext.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/InputImpl.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/InputImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/JoystickImpl.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/JoystickImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/SensorImpl.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/SensorImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/VideoModeImpl.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/VulkanImplX11.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/VulkanImplX11.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/WindowImplX11.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Unix/WindowImplX11.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/VideoMode.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/VideoModeImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Vulkan.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/Window.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/WindowBase.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/WindowImpl.cpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/WindowImpl.hpp">
-			<Option target="sfml-window"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/async.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/async_logger-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/async_logger.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/common-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/common.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/backtracer-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/backtracer.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/circular_q.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/console_globals.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/file_helper-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/file_helper.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/fmt_helper.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/log_msg-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/log_msg.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/log_msg_buffer-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/log_msg_buffer.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/mpmc_blocking_q.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/null_mutex.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/os-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/os.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/periodic_worker-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/periodic_worker.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/registry-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/registry.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/synchronous_factory.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/tcp_client-windows.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/tcp_client.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/thread_pool-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/thread_pool.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/details/windows_include.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bin_to_hex.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/chrono.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/color.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/compile.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/core.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/format-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/format.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/locale.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/os.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/ostream.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/posix.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/printf.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/bundled/ranges.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/chrono.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/fmt.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fmt/ostr.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/formatter.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/fwd.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/logger-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/logger.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/pattern_formatter-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/pattern_formatter.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/android_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/ansicolor_sink-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/ansicolor_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/base_sink-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/base_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/basic_file_sink-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/basic_file_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/daily_file_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/dist_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/dup_filter_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/hourly_file_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/msvc_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/null_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/ostream_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/ringbuffer_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/rotating_file_sink-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/rotating_file_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/sink-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/stdout_color_sinks-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/stdout_color_sinks.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/stdout_sinks-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/stdout_sinks.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/syslog_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/systemd_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/tcp_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/win_eventlog_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/wincolor_sink-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/sinks/wincolor_sink.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/spdlog-inl.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/spdlog.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/stopwatch.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/tweakme.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/include/spdlog/version.h">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/src/async.cpp">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/src/cfg.cpp">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/src/color_sinks.cpp">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/src/file_sinks.cpp">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/src/fmt.cpp">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/src/spdlog.cpp">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/src/stdout_sinks.cpp">
-			<Option target="spdlog"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/Scene.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/Scene.cpp">
 			<Option target="wasabi-engine-lib"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/EventsStack.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/EventsStack.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/SFMLWindow.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/GLFWWindow.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/WasabiEngine.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/SFMLWindow.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/WindowBuilder.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/WasabiEngine.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/details/Container.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/WindowBuilder.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/Event.hpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/details/Container.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/EventVisitor.hpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/Event.hpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/EventsStack.hpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/EventVisitor.hpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/MouseClickEvent.hpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/EventsStack.hpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/OnCloseEvent.hpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/MouseClickEvent.hpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/WorldSupervisor.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/include/core/OnCloseEvent.hpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/WorldSupervisor.cpp">
 			<Option target="wasabi-ecs"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/include/Actor.hpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/include/Actor.hpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/main.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/main.cpp">
 			<Option target="wasabi-engine-main"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/Config.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/Config.cpp">
 			<Option target="wasabi-platform"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/VulkanRenderer.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/VulkanRenderer.cpp">
 			<Option target="wasabi-rendering"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/details/VulkanUtils.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/details/VulkanUtils.cpp">
 			<Option target="wasabi-rendering"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/systems/ShapesRenderingSystem.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/details/linux/VulkanLinuxUtils.cpp">
 			<Option target="wasabi-rendering"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/FileUtils.cpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/details/macos/VulkanMacOsUtils.cpp">
+			<Option target="wasabi-rendering"/>
+		</Unit>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/details/win/VulkanWinUtils.cpp">
+			<Option target="wasabi-rendering"/>
+		</Unit>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/systems/ShapesRenderingSystem.cpp">
+			<Option target="wasabi-rendering"/>
+		</Unit>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/FileUtils.cpp">
 			<Option target="wasabi-utils"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/include/utils/defs.hpp">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/include/utils/defs.hpp">
 			<Option target="wasabi-utils"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\SFML\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/spdlog/spdlogConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\spdlog\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/Config.cmake">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/spdlog/spdlogConfigTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\spdlog\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/Macros.cmake">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/spdlog/spdlogConfigTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\spdlog\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/SFMLConfig.cmake.in">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/spdlog/spdlogConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\spdlog\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/SFMLConfigDependencies.cmake.in">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/fmt/fmt-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\fmt\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/Modules/FindFLAC.cmake">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\Modules\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/fmt/fmt-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\fmt\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/Modules/FindFreetype.cmake">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\Modules\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/fmt/fmt-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\fmt\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/Modules/FindUDev.cmake">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\Modules\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/fmt/fmt-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\fmt\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/cmake/Modules/FindVORBIS.cmake">
-			<Option virtualFolder="CMake Files\external\SFML\cmake\Modules\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/glm/glmConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glm\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/tools/pkg-config/sfml-all.pc.in">
-			<Option virtualFolder="CMake Files\external\SFML\tools\pkg-config\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/glm/glmConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glm\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/tools/pkg-config/sfml-audio.pc.in">
-			<Option virtualFolder="CMake Files\external\SFML\tools\pkg-config\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/glfw3/glfw3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glfw3\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/tools/pkg-config/sfml-graphics.pc.in">
-			<Option virtualFolder="CMake Files\external\SFML\tools\pkg-config\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/glfw3/glfw3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glfw3\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/tools/pkg-config/sfml-network.pc.in">
-			<Option virtualFolder="CMake Files\external\SFML\tools\pkg-config\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/glfw3/glfw3Targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glfw3\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/tools/pkg-config/sfml-system.pc.in">
-			<Option virtualFolder="CMake Files\external\SFML\tools\pkg-config\"/>
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/../../../../opt/homebrew/lib/cmake/glfw3/glfw3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glfw3\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/tools/pkg-config/sfml-window.pc.in">
-			<Option virtualFolder="CMake Files\external\SFML\tools\pkg-config\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\SFML\src\SFML\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/System/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\SFML\src\SFML\System\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Window/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\SFML\src\SFML\Window\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Network/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\SFML\src\SFML\Network\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Graphics/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\SFML\src\SFML\Graphics\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/SFML/src/SFML/Audio/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\SFML\src\SFML\Audio\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\external\spdlog\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/cmake/ide.cmake">
-			<Option virtualFolder="CMake Files\external\spdlog\cmake\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/external/spdlog/cmake/utils.cmake">
-			<Option virtualFolder="CMake Files\external\spdlog\cmake\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\wasabi\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/utils/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/utils/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\wasabi\utils\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/platform/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/platform/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\wasabi\platform\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/ecs/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/ecs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\wasabi\ecs\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/rendering/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/rendering/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\wasabi\rendering\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/physics/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/physics/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\wasabi\physics\"/>
 		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/src/wasabi/core/CMakeLists.txt">
+		<Unit filename="/Users/ryuu/Projects/wasabi-engine/src/wasabi/core/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\wasabi\core\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/../../../../usr/local/lib/cmake/glm/glmConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glm\"/>
-		</Unit>
-		<Unit filename="/home/ryuu/Projects/wasabi-engine/../../../../usr/local/lib/cmake/glm/glmConfigVersion.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glm\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

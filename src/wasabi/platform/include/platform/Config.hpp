@@ -21,4 +21,8 @@ Platform getPlatform();
 
 #ifdef __linux__
 #define VK_USE_PLATFORM_WAYLAND_KHR
-#endif
+#endif // __linux__
+
+#ifdef __APPLE__
+#define VK_USE_PLATFORM_METAL_EXT
+#endif // __APPLE__

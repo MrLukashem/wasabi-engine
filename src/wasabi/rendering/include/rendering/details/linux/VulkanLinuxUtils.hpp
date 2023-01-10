@@ -19,7 +19,7 @@ using ExtensionsNames = std::vector<const char *>;
 namespace wasabi::rendering::details::lx {
 
 #ifdef __linux__
-std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle);
+std::optional<VkSurfaceKHR> createVkSurfaceInternal(VkInstance instance, WindowHandle nativeHandle);
 
 details::ExtensionsNames getPlatformExtensionsInternal();
 #endif

@@ -2,6 +2,7 @@
 #include "rendering/details/VulkanUtils.hpp"
 
 #include "rendering/details/linux/VulkanLinuxUtils.hpp"
+#include "rendering/details/macos/VulkanMacOsUtils.hpp"
 #include "rendering/details/win/VulkanWinUtils.hpp"
 
 #include "spdlog/spdlog.h"
@@ -19,6 +20,7 @@ auto logger = spdlog::stdout_color_mt("VulkanUtils");
 namespace wasabi::rendering::details {
 
 using namespace lx;
+using namespace macos;
 using namespace win;
 
 std::optional<uint32_t> findQueueFamilyIndex(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface) {
@@ -60,7 +62,7 @@ SwapChainDetails querySwapChainDetails(VkPhysicalDevice physicalDevice, VkSurfac
 }
 
 ExtensionsNames getPlatformExtensions() {
-    return getPlatformExtensionsInternal();
+    return {};//getPlatformExtensionsInternal();
 }
 
 std::vector<const char*> getNotAvailableExtensions(
@@ -143,9 +145,9 @@ std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtens
 	return vkInstance;
 }
 
-std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle) {
-    return details::lx::createVkSurface(instance, nativeHandle);
-}
+//std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle) {
+//    return createVkSurfaceInternal(instance, nativeHandle);
+//}
 
 std::optional<VkPhysicalDevice> getTheMostSuitableDevice(
 	const VkInstance instance,

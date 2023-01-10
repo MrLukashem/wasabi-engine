@@ -15,3 +15,11 @@ struct WindowHandle {
     wl_display* wlDisplay;
 };
 #endif
+
+#ifdef __APPLE__
+using CAMetalLayer = void;
+
+struct WindowHandle {
+    CAMetalLayer* caMetalLayer;
+};
+#endif

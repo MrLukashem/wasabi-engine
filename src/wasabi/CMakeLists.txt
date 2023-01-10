@@ -2,10 +2,11 @@
 set(COMPONENTS_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/components/include)
 set(PLATFORM_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/platform/include)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_VERBOSE_MAKEFILE OFF)
+set(CMAKE_APPLE_SILICON_PROCESSOR TRUE)
 
 #find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
-find_package(glm REQUIRED)
+#find_package(glm REQUIRED)
 
 add_subdirectory(utils)
 add_subdirectory(platform)
@@ -16,7 +17,7 @@ add_subdirectory(core)
 
 include_directories(include)
 
-SET(CMAKE_CXX_FLAGS "-std=c++17")
+SET(CMAKE_CXX_FLAGS "-arch=armv7 -std=c++17")
 
 #set(BUILD_SHARED_LIBS OFF)
 #link_directories(${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/lib)
@@ -27,7 +28,7 @@ SET(CMAKE_CXX_FLAGS "-std=c++17")
 
 # add the executable
 add_library(wasabi-engine-lib STATIC
-    "Scene.cpp")
+    Scene.cpp)
 
 add_executable(wasabi-engine-main
     main.cpp)
@@ -61,6 +62,6 @@ if (UNIX)
             wasabi-rendering
             core)
 endif(UNIX)
-    
+
 target_link_libraries(wasabi-engine-main wasabi-engine-lib)
 

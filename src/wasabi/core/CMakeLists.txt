@@ -8,10 +8,6 @@ find_package(glfw3 REQUIRED)
 set(BUILD_SHARED_LIBS OFF)
 #link_directories(${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/lib)
 #set(SFML_INCLUDE ${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/include)
-set(SFML_STATIC_LIBRARIES TRUE)
-set(SFML_USE_STATIC_STD_LIBS TRUE)
-set(SFML_STATIC TRUE)
-add_definitions(-DSFML_STATIC)
 #link_directories( ${PROJECT_SOURCE_DIR}/external/spdlog/build)
 add_library(core STATIC
 		"WasabiEngine.cpp"
@@ -24,6 +20,10 @@ add_library(core STATIC
 target_include_directories(core PUBLIC include include/core ${COMPONENTS_INCLUDE} ${PLATFORM_INCLUDE} PRIVATE ${GLM_INCLUDE_DIRS} ${RENDERING_INCLUDES})
 
 if (WIN32)
+	set(SFML_STATIC_LIBRARIES TRUE)
+	set(SFML_USE_STATIC_STD_LIBS TRUE)
+	set(SFML_STATIC TRUE)
+	add_definitions(-DSFML_STATIC)
 	target_link_libraries(core PRIVATE
 			wasabi-ecs
 			sfml-system
@@ -40,6 +40,6 @@ if (UNIX)
 			wasabi-ecs
 			wasabi-rendering
 			glfw
-			spdlog::spdlog)
+			spdlog)
 endif()
 

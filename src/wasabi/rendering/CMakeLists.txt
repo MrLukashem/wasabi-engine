@@ -10,8 +10,10 @@ add_library(
 		details/VulkanUtils.cpp
 		details/linux/VulkanLinuxUtils.cpp
 		details/win/VulkanWinUtils.cpp
+		details/macos/VulkanMacOsUtils.cpp
 		VulkanRenderer.cpp)
 
-target_link_libraries(wasabi-rendering wasabi-utils wasabi-ecs wasabi-platform spdlog::spdlog Vulkan::Vulkan glm::glm)
+include_directories("/opt/homebrew/Cellar/glm/0.9.9.8/include")
+target_link_libraries(wasabi-rendering wasabi-utils wasabi-ecs wasabi-platform spdlog Vulkan::Vulkan glm::glm)
 
-target_include_directories(wasabi-rendering PUBLIC include PRIVATE ${COMPONENTS_INCLUDE} ${PLATFORM_INCLUDE})
+target_include_directories(wasabi-rendering PUBLIC include PRIVATE ${COMPONENTS_INCLUDE} ${PLATFORM_INCLUDE} ${GLM_INCLUDE_DIRS})

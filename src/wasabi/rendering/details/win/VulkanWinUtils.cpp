@@ -10,7 +10,7 @@
 
 namespace wasabi::rendering::details::win {
 
-std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle) {
+std::optional<VkSurfaceKHR> createVkSurfaceInternal(VkInstance instance, WindowHandle nativeHandle) {
     VkWin32SurfaceCreateInfoKHR info{};
     info.hinstance = GetModuleHandle(nullptr);
     info.hwnd = nativeHandle;

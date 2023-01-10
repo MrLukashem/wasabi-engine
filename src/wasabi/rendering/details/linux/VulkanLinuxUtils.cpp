@@ -12,7 +12,7 @@
 
 namespace wasabi::rendering::details::lx {
 
-std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle) {
+std::optional<VkSurfaceKHR> createVkSurfaceInternal(VkInstance instance, WindowHandle nativeHandle) {
     VkWaylandSurfaceCreateInfoKHR info{};
     info.display = nativeHandle.wlDisplay;
     info.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;

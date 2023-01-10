@@ -1,7 +1,5 @@
 
-#pragma
-
-#include <cuchar>
+#pragma once
 
 
 namespace wasabi::ecs::utils {

@@ -14,7 +14,7 @@
 namespace wasabi::rendering::details::win {
 
 #ifdef _WIN32
-std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle);
+std::optional<VkSurfaceKHR> createVkSurfaceIntenral(VkInstance instance, WindowHandle nativeHandle);
 
 details::ExtensionsNames getPlatformExtensionsInternal();
 #endif
