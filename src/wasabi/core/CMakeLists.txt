@@ -10,14 +10,18 @@ set(BUILD_SHARED_LIBS OFF)
 #set(SFML_INCLUDE ${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/include)
 #link_directories( ${PROJECT_SOURCE_DIR}/external/spdlog/build)
 add_library(core STATIC
+		"MetalLayerHelper.mm"
 		"WasabiEngine.cpp"
 		"WindowBuilder.cpp"
 		"SFMLWindow.cpp"
 		"GLFWWindow.cpp"
 		"include/core/EventsStack.hpp"
-		"include/core/Event.hpp" "include/core/EventVisitor.hpp" "include/core/MouseClickEvent.hpp"  "EventsStack.cpp" "include/core/OnCloseEvent.hpp" "../include/Actor.hpp" "details/Container.cpp")
+		"include/core/Event.hpp" "include/core/EventVisitor.hpp" "include/core/MouseClickEvent.hpp"  "EventsStack.cpp" "include/core/OnCloseEvent.hpp" "../include/Actor.hpp" "details/Container.cpp"
+		include/core/MetalLayerHelper.h
+		include/core/GLFWKeyEvent.h
+)
 
-target_include_directories(core PUBLIC include include/core ${COMPONENTS_INCLUDE} ${PLATFORM_INCLUDE} PRIVATE ${GLM_INCLUDE_DIRS} ${RENDERING_INCLUDES})
+target_include_directories(core PUBLIC include include/core ${COMPONENTS_INCLUDE} ${PLATFORM_INCLUDE} ${UTILS_INCLUDE} PRIVATE ${GLM_INCLUDE_DIRS} ${RENDERING_INCLUDES})
 
 if (WIN32)
 	set(SFML_STATIC_LIBRARIES TRUE)
@@ -36,10 +40,13 @@ if (WIN32)
 endif()
 
 if (UNIX)
-	target_link_libraries(core PRIVATE
+	target_link_libraries(core
+		PUBLIC
 			wasabi-ecs
 			wasabi-rendering
+		PRIVATE
 			glfw
-			spdlog)
+			spdlog
+	)
 endif()
 

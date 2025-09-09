@@ -1,6 +1,8 @@
 
 #include "WasabiEngine.hpp"
 
+#include <thread>
+
 #include "EventsStack.hpp"
 #include "MouseClickEvent.hpp"
 #include "OnCloseEvent.hpp"
@@ -28,12 +30,32 @@ WasabiEngine::~WasabiEngine() = default;
 void WasabiEngine::loop() noexcept {
 	m_running = true;
 	EventsStack eventStack(m_window);
-	rendering::VulkanRenderer renderer{m_window->getNativeHandle()};
+	rendering::VulkanRenderer renderer{
+		m_window->getNativeHandle(),
+		{
+			rendering::ShaderInfo{
+				.stage = rendering::ShaderStage::Vertex,
+				.path = "/Users/ryuu/Projects/wasabi-engine/src/wasabi/shaders/vert.spv"
+			},
+			rendering::ShaderInfo{
+				.stage = rendering::ShaderStage::Fragment,
+				.path = "/Users/ryuu/Projects/wasabi-engine/src/wasabi/shaders/frag.spv"
+			}
+		}
+	};
+
+	m_window->show();
 
 	while (m_running) {
 		while (const auto event = eventStack.popEvent()) {
-			event->accept(*this);
+			if (event != nullptr) {
+				event->accept(*this);
+			} else {
+				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+			}
 		}
+
+		renderer.drawFrame();
 	}
 }
 

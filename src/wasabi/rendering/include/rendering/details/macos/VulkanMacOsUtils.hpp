@@ -6,7 +6,8 @@
 
 #include "platform/WindowHandle.hpp"
 
-#include <vulkan/vulkan.h>
+#define VK_USE_PLATFORM_MACOS_MVK
+#include <volk.h>
 
 #include <optional>
 #include <vector>
@@ -16,12 +17,12 @@ namespace wasabi::rendering::details {
     using ExtensionsNames = std::vector<const char *>;
 }
 
-namespace wasabi::rendering::details::macos {
+namespace wasabi::rendering::details {
 
 #ifdef __APPLE__
-//std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle);
-//
-//details::ExtensionsNames getPlatformExtensionsInternal();
+std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle);
+
+details::ExtensionsNames getPlatformExtensionsInternal();
 #endif
 
-} // rendering::details::macos
+} // rendering::details

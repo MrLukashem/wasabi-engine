@@ -1,13 +1,18 @@
 
 #pragma once
 
+#include "rendering/Shader.h"
 #include "platform/Config.hpp"
 #include "platform/WindowHandle.hpp"
 #include "utils/defs.hpp"
 
-#include <vulkan/vulkan.h>
+// #include <vulkan/vulkan.h>
+#define VK_USE_PLATFORM_METAL_EXT
+#define VK_USE_PLATFORM_MACOS_MVK
+#include <volk.h>
 
 #include <algorithm>
+#include <functional>
 #include <optional>
 #include <vector>
 #include <type_traits>
@@ -30,6 +35,10 @@ struct SwapChainSetup {
 	VkPresentModeKHR mode;
 	uint32_t imageCount;
 };
+
+std::string_view vkResultToString(VkResult result) noexcept;
+
+VkShaderStageFlagBits toVkShaderStage(const ShaderStage stage);
 
 std::optional<uint32_t> findQueueFamilyIndex(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface);
 
@@ -76,6 +85,16 @@ std::optional<VkPipelineLayout> createPipelineLayout(VkDevice device, const VkPi
 std::optional<VkRenderPass> createRenderPass(VkDevice device, const VkRenderPassCreateInfo& info);
 
 std::optional<VkPipeline> createPipeline(VkDevice device, const VkGraphicsPipelineCreateInfo& info);
+
+std::optional<VkFramebuffer> createFrameBuffer(VkDevice device, const VkFramebufferCreateInfo& info);
+
+std::optional<VkCommandPool> createCommandPool(VkDevice device, const VkCommandPoolCreateInfo& info);
+
+std::optional<VkCommandBuffer> createCommandBuffer(VkDevice device, const VkCommandBufferAllocateInfo& info);
+
+std::optional<VkSemaphore> createSemaphore(VkDevice device, const VkSemaphoreCreateInfo& info);
+
+std::optional<VkFence> createFence(VkDevice device, const VkFenceCreateInfo& info);
 
 template <typename VK_T, typename... Args>
 std::optional<VK_T> create(Args&&... args) {
@@ -168,6 +187,36 @@ std::optional<VkPipeline> Anvil<VkPipeline>::forge(Args... args) {
 	return createPipeline(std::forward<Args>(args)...);
 }
 
+template <>
+template <typename... Args>
+std::optional<VkFramebuffer> Anvil<VkFramebuffer>::forge(Args... args) {
+	return createFrameBuffer(std::forward<Args>(args)...);
+}
+
+template <>
+template <typename... Args>
+std::optional<VkCommandPool> Anvil<VkCommandPool>::forge(Args... args) {
+	return createCommandPool(std::forward<Args>(args)...);
+}
+
+template <>
+template <typename... Args>
+std::optional<VkCommandBuffer> Anvil<VkCommandBuffer>::forge(Args... args) {
+	return createCommandBuffer(std::forward<Args>(args)...);
+}
+
+template <>
+template <typename... Args>
+std::optional<VkSemaphore> Anvil<VkSemaphore>::forge(Args... args) {
+	return createSemaphore(std::forward<Args>(args)...);
+}
+
+template <>
+template <typename... Args>
+std::optional<VkFence> Anvil<VkFence>::forge(Args... args) {
+	return createFence(std::forward<Args>(args)...);
+}
+
 template <typename T>
 T makeInfo() {
 	return {};
@@ -217,5 +266,29 @@ VkRenderPassCreateInfo makeInfo<VkRenderPassCreateInfo>();
 
 template <>
 VkGraphicsPipelineCreateInfo makeInfo<VkGraphicsPipelineCreateInfo>();
+
+template <>
+VkCommandPoolCreateInfo makeInfo<VkCommandPoolCreateInfo>();
+
+template <>
+VkCommandBufferAllocateInfo makeInfo<VkCommandBufferAllocateInfo>();
+
+template <>
+VkCommandBufferBeginInfo makeInfo<VkCommandBufferBeginInfo>();
+
+template <>
+VkRenderPassBeginInfo makeInfo<VkRenderPassBeginInfo>();
+
+template <>
+VkSemaphoreCreateInfo makeInfo<VkSemaphoreCreateInfo>();
+
+template <>
+VkFenceCreateInfo makeInfo<VkFenceCreateInfo>();
+
+template <>
+VkSubmitInfo makeInfo<VkSubmitInfo>();
+
+template <>
+VkPresentInfoKHR makeInfo<VkPresentInfoKHR>();
 
 } // namespace wasabi::rendering::details

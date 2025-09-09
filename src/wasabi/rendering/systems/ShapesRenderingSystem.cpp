@@ -4,7 +4,9 @@
 #include "rendering/VulkanRenderer.hpp"
 #include "ecs/WorldSupervisor.hpp"
 
-#include <vulkan/vulkan.hpp>
+// #include <vulkan/vulkan.hpp>
+#define VK_USE_PLATFORM_MACOS_MVK
+#include <volk.h>
 
 
 namespace {

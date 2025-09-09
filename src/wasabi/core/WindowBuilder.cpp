@@ -15,8 +15,10 @@ std::unique_ptr<Window> WindowBuilder::build() const noexcept {
 #ifdef _WIN32
     return std::make_unique<SFMLWindow>(m_width, m_height, m_title);
 #endif
-#ifdef __linux__
-    return std::make_unique<GLFWWindow>();
+#if defined(__linux__) || defined(__APPLE__)
+	return std::make_unique<GLFWWindow>();
+#else
+	return nullptr;
 #endif
 }
 

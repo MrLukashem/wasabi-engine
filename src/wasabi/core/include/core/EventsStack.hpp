@@ -10,10 +10,10 @@ namespace wasabi::core {
 
 struct Window;
 
-class EventsStack {
+class EventsStack final {
 public:
-	EventsStack(std::shared_ptr<Window> window);
-	virtual ~EventsStack() = default;
+	explicit EventsStack(std::shared_ptr<Window> window);
+	~EventsStack() = default;
 
 	std::unique_ptr<Event> popEvent();
 private:

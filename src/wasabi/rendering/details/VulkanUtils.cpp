@@ -10,7 +10,7 @@
 
 #include <limits>
 
-
+#include <iostream>
 namespace {
 
 auto logger = spdlog::stdout_color_mt("VulkanUtils");
@@ -20,8 +20,40 @@ auto logger = spdlog::stdout_color_mt("VulkanUtils");
 namespace wasabi::rendering::details {
 
 using namespace lx;
-using namespace macos;
 using namespace win;
+
+std::string_view vkResultToString(const VkResult result) noexcept {
+	switch (result) {
+		case VK_SUCCESS: return "VK_SUCCESS";
+		case VK_NOT_READY: return "VK_NOT_READY";
+		case VK_TIMEOUT: return "VK_TIMEOUT";
+		case VK_EVENT_SET: return "VK_EVENT_SET";
+		case VK_EVENT_RESET: return "VK_EVENT_RESET";
+		case VK_INCOMPLETE: return "VK_INCOMPLETE";
+		case VK_ERROR_OUT_OF_HOST_MEMORY: return "VK_ERROR_OUT_OF_HOST_MEMORY";
+		case VK_ERROR_OUT_OF_DEVICE_MEMORY: return "VK_ERROR_OUT_OF_DEVICE_MEMORY";
+		case VK_ERROR_INITIALIZATION_FAILED: return "VK_ERROR_INITIALIZATION_FAILED";
+		case VK_ERROR_DEVICE_LOST: return "VK_ERROR_DEVICE_LOST";
+		case VK_ERROR_MEMORY_MAP_FAILED: return "VK_ERROR_MEMORY_MAP_FAILED";
+		case VK_ERROR_LAYER_NOT_PRESENT: return "VK_ERROR_LAYER_NOT_PRESENT";
+		case VK_ERROR_EXTENSION_NOT_PRESENT: return "VK_ERROR_EXTENSION_NOT_PRESENT";
+		case VK_ERROR_FEATURE_NOT_PRESENT: return "VK_ERROR_FEATURE_NOT_PRESENT";
+		case VK_ERROR_INCOMPATIBLE_DRIVER: return "VK_ERROR_INCOMPATIBLE_DRIVER";
+		case VK_ERROR_TOO_MANY_OBJECTS: return "VK_ERROR_TOO_MANY_OBJECTS";
+		case VK_ERROR_FORMAT_NOT_SUPPORTED: return "VK_ERROR_FORMAT_NOT_SUPPORTED";
+		case VK_ERROR_FRAGMENTED_POOL: return "VK_ERROR_FRAGMENTED_POOL";
+		default: return "VK_ERROR_UNKNOWN";
+	}
+}
+
+VkShaderStageFlagBits toVkShaderStage(const ShaderStage stage) {
+	switch(stage) {
+		case ShaderStage::Vertex: return VK_SHADER_STAGE_VERTEX_BIT;
+		case ShaderStage::Fragment: return VK_SHADER_STAGE_FRAGMENT_BIT;
+		case ShaderStage::Geometry: return VK_SHADER_STAGE_GEOMETRY_BIT;
+		case ShaderStage::Compute: return VK_SHADER_STAGE_COMPUTE_BIT;
+	}
+}
 
 std::optional<uint32_t> findQueueFamilyIndex(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface) {
 	uint32_t queueFamilyCount{};
@@ -62,7 +94,7 @@ SwapChainDetails querySwapChainDetails(VkPhysicalDevice physicalDevice, VkSurfac
 }
 
 ExtensionsNames getPlatformExtensions() {
-    return {};//getPlatformExtensionsInternal();
+    return getPlatformExtensionsInternal();
 }
 
 std::vector<const char*> getNotAvailableExtensions(
@@ -70,14 +102,12 @@ std::vector<const char*> getNotAvailableExtensions(
 	const ExtensionsNames& requestedExtensionsNames
 ) {
 	std::vector<const char*> notAvailableExtensions{};
-	for (const auto& extension : supportedExtensions) {
-		if (std::find_if(requestedExtensionsNames.begin(), requestedExtensionsNames.end(),
-			[&extension] (const auto requestedExtension)
-			{
-				return std::strcmp(requestedExtension, extension.extensionName) == 0;
-			}) == requestedExtensionsNames.end()) {
 
-			notAvailableExtensions.emplace_back(extension.extensionName);
+	for (const auto& requestedExtensionName: requestedExtensionsNames) {
+		if (std::ranges::find_if(supportedExtensions, [requestedExtensionName] (const auto& extension) {
+			return std::strcmp(requestedExtensionName, extension.extensionName) == 0;
+		}) == supportedExtensions.end()) {
+			notAvailableExtensions.emplace_back(requestedExtensionName);
 		}
 	}
 
@@ -122,7 +152,7 @@ std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtens
 	appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
 	appInfo.pEngineName = "WasabiEngine";
 	appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
-	appInfo.apiVersion = VK_API_VERSION_1_2;
+	appInfo.apiVersion = VK_API_VERSION_1_4;
 
 	if (!supportsInstanceExtensions(requiredExtensions)) {
 		logger->error("Vulkan does not support all required extensions!");
@@ -132,15 +162,46 @@ std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtens
 	VkInstanceCreateInfo createInfo{};
 	createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 	createInfo.pApplicationInfo = &appInfo;
-	createInfo.enabledLayerCount = 0;
+	// createInfo.enabledLayerCount = 0;
+	createInfo.flags = VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR; // TODO: make it more generic because this flag is macos specific
 	createInfo.enabledExtensionCount = static_cast<uint32_t>(requiredExtensions.size());
 	createInfo.ppEnabledExtensionNames = requiredExtensions.data();
+	createInfo.enabledLayerCount = 0;
+	createInfo.ppEnabledLayerNames = nullptr;
 
 	VkInstance vkInstance;
-	if (vkCreateInstance(&createInfo, nullptr, &vkInstance) != VK_SUCCESS) {
-		logger->error("Failed to create vkinstance");
+	if (const auto result = vkCreateInstance(&createInfo, nullptr, &vkInstance); result != VK_SUCCESS) {
+		logger->error("Failed to create vkInstance with error: {}", vkResultToString(result));
 		return {};
 	}
+
+	PFN_vkCreateMetalSurfaceEXT pfn_before = vkCreateMetalSurfaceEXT;
+	std::cout << "[DIAGNOSTYKA] Wskaźnik PRZED volkLoadInstance: " << (void*)pfn_before << std::endl;
+	volkLoadInstance(vkInstance);
+	PFN_vkCreateMetalSurfaceEXT pfn_after = vkCreateMetalSurfaceEXT;
+	std::cout << "[DIAGNOSTYKA] Wskaźnik PO volkLoadInstance: " << (void*)pfn_after << std::endl;
+
+	PFN_vkCreateMetalSurfaceEXT pfn_volk_check = vkCreateMetalSurfaceEXT;
+	std::cout << "Wskaźnik z globalnej tabeli volk: " << (void*)pfn_volk_check << std::endl;
+
+	// Test 2: Czy możemy ręcznie pobrać wskaźnik, omijając mechanizm ładowania volk?
+	// To testuje bezpośrednio Twój loader Vulkan i sterownik.
+	// vkGetInstanceProcAddr jest ładowane przez volkInitialize(), więc powinno być dostępne.
+	PFN_vkGetInstanceProcAddr pfn_gipa = vkGetInstanceProcAddr; // volk definiuje to jako wskaźnik
+	if (pfn_gipa) {
+		PFN_vkCreateMetalSurfaceEXT pfn_manual_check = (PFN_vkCreateMetalSurfaceEXT)pfn_gipa(vkInstance, "vkCreateMetalSurfaceEXT");
+		std::cout << "Wskaźnik pobrany RĘCZNIE przez gipa: " << (void*)pfn_manual_check << std::endl;
+
+		if (pfn_volk_check != pfn_manual_check) {
+			std::cout << "KRYTYCZNY WNIOSEK: Wskaźniki się RÓŻNIĄ! Problem z linkowaniem/wieloma kopiami volk." << std::endl;
+		} else {
+			std::cout << "WNIOSEK: Wskaźniki są takie same." << std::endl;
+		}
+	} else {
+		std::cout << "KATASTROFA: Nawet wskaźnik do vkGetInstanceProcAddr jest nieprawidłowy! Błąd w volkInitialize()." << std::endl;
+	}
+	std::cout << "------------------------------------" << std::endl;
+
 
 	return vkInstance;
 }
@@ -263,6 +324,50 @@ std::optional<VkPipeline> createPipeline(VkDevice device, const VkGraphicsPipeli
 	return pipeline;
 }
 
+std::optional<VkFramebuffer> createFrameBuffer(VkDevice device, const VkFramebufferCreateInfo& info) {
+	VkFramebuffer framebuffer{};
+	if (vkCreateFramebuffer(device, &info, nullptr, &framebuffer)) {
+		return {};
+	}
+
+	return framebuffer;
+}
+
+std::optional<VkCommandPool> createCommandPool(VkDevice device, const VkCommandPoolCreateInfo& info) {
+	VkCommandPool pool{};
+	if (vkCreateCommandPool(device, &info, nullptr, &pool) != VK_SUCCESS) {
+		logger->error("Failed to create CommandPool");
+		return {};
+	}
+	return pool;
+}
+
+std::optional<VkCommandBuffer> createCommandBuffer(VkDevice device, const VkCommandBufferAllocateInfo &info) {
+	VkCommandBuffer commandBuffer{};
+	if (vkAllocateCommandBuffers(device, &info, &commandBuffer) != VK_SUCCESS) {
+		logger->error("Failed to create CommandBuffer");
+		return {};
+	}
+	return commandBuffer;
+}
+
+std::optional<VkSemaphore> createSemaphore(VkDevice device, const VkSemaphoreCreateInfo& info) {
+	VkSemaphore semaphore{};
+	if (vkCreateSemaphore(device, &info, nullptr, &semaphore) != VK_SUCCESS) {
+		logger->error("Failed to create Semaphore");
+	}
+	return semaphore;
+}
+
+std::optional<VkFence> createFence(VkDevice device, const VkFenceCreateInfo& info) {
+	VkFence fence{};
+	if (vkCreateFence(device, &info, nullptr, &fence) != VK_SUCCESS) {
+		logger->error("Failed to create Fence");
+		return {};
+	}
+	return fence;
+}
+
 template <>
 VkSwapchainCreateInfoKHR makeInfo<VkSwapchainCreateInfoKHR>() {
 	VkSwapchainCreateInfoKHR info{};
@@ -379,7 +484,62 @@ template <>
 VkGraphicsPipelineCreateInfo makeInfo<VkGraphicsPipelineCreateInfo>() {
 	VkGraphicsPipelineCreateInfo info{};
 	info.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+	return info;
+}
 
+template <>
+VkCommandPoolCreateInfo makeInfo<VkCommandPoolCreateInfo>() {
+	VkCommandPoolCreateInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
+	return info;
+}
+
+template<>
+VkCommandBufferAllocateInfo makeInfo<VkCommandBufferAllocateInfo>() {
+	VkCommandBufferAllocateInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+	return info;
+}
+
+template <>
+VkCommandBufferBeginInfo makeInfo<VkCommandBufferBeginInfo>() {
+	VkCommandBufferBeginInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+	return info;
+}
+
+template <>
+VkRenderPassBeginInfo makeInfo<VkRenderPassBeginInfo>() {
+	VkRenderPassBeginInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+	return info;
+}
+
+template <>
+VkSemaphoreCreateInfo makeInfo<VkSemaphoreCreateInfo>() {
+	VkSemaphoreCreateInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
+	return info;
+}
+
+template <>
+VkFenceCreateInfo makeInfo<VkFenceCreateInfo>() {
+	VkFenceCreateInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+	return info;
+}
+
+template <>
+VkSubmitInfo makeInfo<VkSubmitInfo>() {
+	VkSubmitInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+	return info;
+}
+
+template <>
+VkPresentInfoKHR makeInfo<VkPresentInfoKHR>() {
+	VkPresentInfoKHR info{};
+	info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 	return info;
 }
 

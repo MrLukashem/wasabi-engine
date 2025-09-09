@@ -12,14 +12,21 @@ Scene::Scene() = default;
 
 Scene::~Scene() = default;
 
-void Scene::setWindow() noexcept {
-	auto window = core::WindowBuilder::create()
-		.width(800)
-		.height(600)
-		.title("Wasabi Window")
-		.build();
+void Scene::setWindow(std::unique_ptr<core::Window> window) noexcept {
+	if (window == nullptr) {
+		return;
+	}
 
-	m_engine = std::make_unique<core::WasabiEngine>(std::move(window));
+	m_window = std::move(window);
+	m_engine = std::make_unique<core::WasabiEngine>(m_window);
+}
+
+void Scene::show() noexcept {
+	if (m_window == nullptr) {
+		return;
+	}
+
+	m_window->show();
 }
 
 void Scene::loop() noexcept {

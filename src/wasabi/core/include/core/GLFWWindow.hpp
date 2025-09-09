@@ -9,6 +9,7 @@
 #include <GLFW/glfw3.h>
 
 #include <functional>
+#include <queue>
 
 
 namespace wasabi::core {
@@ -25,6 +26,7 @@ public:
 private:
     using GlfwUPtr = std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>>;
     GlfwUPtr m_glfwWindow;
+    std::queue<std::unique_ptr<Event>> m_events;
 };
 
 } // namespace wasabi::core

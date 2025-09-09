@@ -10,7 +10,7 @@
 #include "vulkan/vulkan_wayland.h"
 
 
-namespace wasabi::rendering::details::lx {
+namespace wasabi::rendering::details {
 
 std::optional<VkSurfaceKHR> createVkSurfaceInternal(VkInstance instance, WindowHandle nativeHandle) {
     VkWaylandSurfaceCreateInfoKHR info{};
@@ -33,5 +33,5 @@ details::ExtensionsNames getPlatformExtensionsInternal() {
     };
 }
 
-} // rendering::details::linux
+} // rendering::details
 #endif

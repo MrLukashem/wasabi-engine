@@ -20,7 +20,7 @@ public:
 
 	template <typename T>
 	T* spawn() {
-		m_objects.emplace_back(m_engine);
+		// m_objects.emplace_back(m_engine);
 		return m_objects.back().get();
 	}
 
@@ -37,11 +37,13 @@ public:
 	virtual void onUpdate(const float dt) noexcept {};
 	virtual void onStart() noexcept {};
 	virtual void onClose() noexcept {};
-	virtual void setWindow() noexcept;
+	virtual void setWindow(std::unique_ptr<core::Window> window) noexcept;
+	virtual void show() noexcept;
 	virtual void loop() noexcept;
 
 private:
 	std::unique_ptr<core::WasabiEngine> m_engine;
+	std::shared_ptr<core::Window> m_window;
 	std::vector<std::unique_ptr<Object>> m_objects;
 };
 

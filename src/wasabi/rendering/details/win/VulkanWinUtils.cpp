@@ -8,7 +8,7 @@
 #include <optional>
 
 
-namespace wasabi::rendering::details::win {
+namespace wasabi::rendering::details {
 
 std::optional<VkSurfaceKHR> createVkSurfaceInternal(VkInstance instance, WindowHandle nativeHandle) {
     VkWin32SurfaceCreateInfoKHR info{};
@@ -37,5 +37,5 @@ details::ExtensionsNames getPlatformExtensionsInternal() {
 	return {};
 }
 
-} // wasabi::rendering::details::win
+} // wasabi::rendering::details
 #endif

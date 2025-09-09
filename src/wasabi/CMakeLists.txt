@@ -1,7 +1,8 @@
 
 set(COMPONENTS_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/components/include)
 set(PLATFORM_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/platform/include)
-set(CMAKE_CXX_STANDARD 17)
+set(UTILS_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/utils/include)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 set(CMAKE_APPLE_SILICON_PROCESSOR TRUE)
 
@@ -17,7 +18,7 @@ add_subdirectory(core)
 
 include_directories(include)
 
-SET(CMAKE_CXX_FLAGS "-arch=armv7 -std=c++17")
+#SET(CMAKE_CXX_FLAGS "-arch=armv7 -std=c++17")
 
 #set(BUILD_SHARED_LIBS OFF)
 #link_directories(${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/lib)

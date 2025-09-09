@@ -50,30 +50,39 @@ T getOrThrow(const std::optional<T>& opt, const std::string& msg) {
 
 namespace wasabi::rendering {
 
-VulkanRenderer::VulkanRenderer(WindowHandle nativeHandle) {
-    logger->info("ctr begin");
+VulkanRenderer::VulkanRenderer(const WindowHandle nativeHandle, const std::vector<ShaderInfo>& shaderInfos) {
+	logger->info("ctr begin");
 
-    m_instance = getOrThrow(
-        details::createVkInstance(details::getPlatformExtensions()),
-        "Error during vk instance creation");
+	if (const auto result = volkInitialize(); result != VK_SUCCESS) {
+		logger->error("Failed to initialize volk: {}", details::vkResultToString(result));
+	}
 
-    m_surface = getOrThrow(
-        details::createVkSurface(m_instance, nativeHandle),
-        "Error during vk surface creation");
+	m_instance = getOrThrow(
+		details::createVkInstance(details::getPlatformExtensions()),
+		"Error during vk instance creation");
 
-    const auto &physicalDeviceOpt = details::getTheMostSuitableDevice(m_instance,
-                                                                      [](const auto &device) {
-                                                                          return details::supportsDeviceExtensions(
-                                                                              device, getPhysicalDeviceExtenions());
-                                                                      });
-    m_physicalDevice = getOrThrow(physicalDeviceOpt, "No device that meets criteria");
+	m_surface = getOrThrow(
+		details::createVkSurface(m_instance, nativeHandle),
+		"Error during vk surface creation");
 
-    createDevice();
-    vkGetDeviceQueue(m_device, 0, 0, &m_graphicsQueue);
-    createSwapChain();
-    createImagesView();
-    createRenderPass();
-    createGraphicsPipeline();
+	const auto &physicalDeviceOpt = details::getTheMostSuitableDevice(
+		m_instance,
+		[](const auto &device) {
+			return details::supportsDeviceExtensions(device, getPhysicalDeviceExtenions());
+		}
+	);
+	m_physicalDevice = getOrThrow(physicalDeviceOpt, "No device that meets criteria");
+
+	createDevice();
+	vkGetDeviceQueue(m_device, 0, 0, &m_graphicsQueue);
+	createSwapChain();
+	createImagesView();
+	createRenderPass();
+	createGraphicsPipeline(shaderInfos);
+	createFramebuffers();
+	createCommandPool();
+	createCommandBuffers();
+	createSyncObjects();
 }
 
 void VulkanRenderer::createDevice() {
@@ -168,38 +177,40 @@ void VulkanRenderer::createRenderPass() {
 	subpass.colorAttachmentCount = 1;
 	subpass.pColorAttachments = &colorAttachmentRef;
 
+	VkSubpassDependency dependency{};
+	dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+	dependency.dstSubpass = 0;
+	dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+	dependency.srcAccessMask = 0;
+	dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+	dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+
 	auto renderPassInfo = details::makeInfo<VkRenderPassCreateInfo>();
 	renderPassInfo.attachmentCount = 1;
 	renderPassInfo.pAttachments = &colorAttachment;
 	renderPassInfo.subpassCount = 1;
 	renderPassInfo.pSubpasses = &subpass;
+	renderPassInfo.dependencyCount = 1;
+	renderPassInfo.pDependencies = &dependency;
 	m_renderPass = getOrThrow(
 		details::Anvil<VkRenderPass>::forge(m_device, renderPassInfo),
 		"Failed to create a render pass");
 }
 
-void VulkanRenderer::createGraphicsPipeline() {
-	auto vertModule = getOrThrow(
-		details::Anvil<VkShaderModule>::forge(m_device, utils::readFile("C://VulkanSDK//1.2.170.0//Bin//vert.spv")),
-		"Failed to create a vertex shader module");
-	auto fragModule = getOrThrow(
-		details::Anvil<VkShaderModule>::forge(m_device, utils::readFile("C://VulkanSDK//1.2.170.0//Bin//frag.spv")),
-		"Failed to create a fragment shader module");
+void VulkanRenderer::createGraphicsPipeline(const std::vector<ShaderInfo> &shaderInfos) {
+	std::vector<VkPipelineShaderStageCreateInfo> shaderStages{};
 
-	auto vertexShaderStageinfo = details::makeInfo<VkPipelineShaderStageCreateInfo>();
-	vertexShaderStageinfo.stage = VK_SHADER_STAGE_VERTEX_BIT;
-	vertexShaderStageinfo.module = vertModule;
-	vertexShaderStageinfo.pName = "main";
+	for (const auto &[stage, path]: shaderInfos) {
+		auto module = getOrThrow(
+			details::Anvil<VkShaderModule>::forge(m_device, utils::readFile(path)),
+			"Failed to create a " + path + " module");
+		auto shaderStageInfo = details::makeInfo<VkPipelineShaderStageCreateInfo>();
+		shaderStageInfo.stage = details::toVkShaderStage(stage);
+		shaderStageInfo.module = module;
+		shaderStageInfo.pName = "main";
 
-	auto fragmentShaderStageInfo = details::makeInfo<VkPipelineShaderStageCreateInfo>();
-	fragmentShaderStageInfo.stage = VK_SHADER_STAGE_FRAGMENT_BIT;
-	fragmentShaderStageInfo.module = fragModule;
-	fragmentShaderStageInfo.pName = "main";
-
-	std::array<VkPipelineShaderStageCreateInfo, 2> shaderStages = {
-		vertexShaderStageinfo,
-		fragmentShaderStageInfo
-	};
+		shaderStages.push_back(shaderStageInfo);
+	}
 
 	auto vertexInputStateInfo = details::makeInfo<VkPipelineVertexInputStateCreateInfo>();
 	auto inputAssemblyStateInfo = details::makeInfo<VkPipelineInputAssemblyStateCreateInfo>();
@@ -255,7 +266,7 @@ void VulkanRenderer::createGraphicsPipeline() {
 		"Failed to create pipeline layout");
 
 	auto pipelineInfo = details::makeInfo<VkGraphicsPipelineCreateInfo>();
-	pipelineInfo.stageCount = 2;
+	pipelineInfo.stageCount = shaderStages.size();
 	pipelineInfo.pStages = shaderStages.data();
 	pipelineInfo.pVertexInputState = &vertexInputStateInfo;
 	pipelineInfo.pInputAssemblyState = &inputAssemblyStateInfo;
@@ -273,20 +284,186 @@ void VulkanRenderer::createGraphicsPipeline() {
 		details::Anvil<VkPipeline>::forge(m_device, pipelineInfo),
 		"Failed to create Pipeline");
 
-	vkDestroyShaderModule(m_device, vertModule, nullptr);
-	vkDestroyShaderModule(m_device, fragModule, nullptr);
+	for (auto & shaderStage : shaderStages) {
+		vkDestroyShaderModule(m_device, shaderStage.module, nullptr);
+	}
+}
+
+void VulkanRenderer::createFramebuffers() {
+	for (const auto & view : m_views) {
+		const VkImageView attachments[] = {
+			view
+		};
+
+		auto framebufferInfo = details::makeInfo<VkFramebufferCreateInfo>();
+		framebufferInfo.renderPass = m_renderPass;
+		framebufferInfo.attachmentCount = 1;
+		framebufferInfo.pAttachments = &attachments[0];
+		framebufferInfo.width = m_swapChainSetup.extent.width;
+		framebufferInfo.height = m_swapChainSetup.extent.height;
+		framebufferInfo.layers = 1;
+
+		m_framebuffers.push_back(getOrThrow(
+			details::Anvil<VkFramebuffer>::forge(m_device, framebufferInfo),
+			"Failed to create Framebuffer"));
+	}
+}
+
+void VulkanRenderer::createCommandPool() {
+	const auto queueFamilyIndex = details::findQueueFamilyIndex(m_physicalDevice, m_surface);
+	if (!queueFamilyIndex.has_value()) {
+		return;
+	}
+
+	auto poolInfo = details::makeInfo<VkCommandPoolCreateInfo>();
+	poolInfo.flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT;
+	poolInfo.queueFamilyIndex = queueFamilyIndex.value();
+
+	m_commandPool = getOrThrow(
+		details::Anvil<VkCommandPool>::forge(m_device, poolInfo),
+		"Failed to create CommandPool");
+}
+
+void VulkanRenderer::createCommandBuffers() {
+	auto commandBufferInfo = details::makeInfo<VkCommandBufferAllocateInfo>();
+	commandBufferInfo.commandPool = m_commandPool;
+	commandBufferInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+	commandBufferInfo.commandBufferCount = 1;
+
+	m_commandBuffer = getOrThrow(
+		details::Anvil<VkCommandBuffer>::forge(m_device, commandBufferInfo),
+		"Failed to create CommandBuffer");
+}
+
+void VulkanRenderer::createSyncObjects() {
+	const auto semaphoreInfo = details::makeInfo<VkSemaphoreCreateInfo>();
+	auto fenceInfo = details::makeInfo<VkFenceCreateInfo>();
+	fenceInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;
+
+	m_imageAvailableSemaphore = getOrThrow(
+		details::Anvil<VkSemaphore>::forge(m_device, semaphoreInfo),
+		"Failed to create imageAvailableSemaphore");
+	m_renderFinishedSemaphore = getOrThrow(
+		details::Anvil<VkSemaphore>::forge(m_device, semaphoreInfo),
+		"Failed to create renderFinishedSemaphore");
+	m_inFlightFence = getOrThrow(
+		details::Anvil<VkFence>::forge(m_device, fenceInfo),
+		"Failed to create inFlightFence");
+}
+
+void VulkanRenderer::recordCommandBuffer(const uint32_t imageIndex) const {
+	if (imageIndex >= m_framebuffers.size()) {
+		throw std::runtime_error("Invalid image index");
+	}
+
+	auto beginInfo = details::makeInfo<VkCommandBufferBeginInfo>();
+	beginInfo.flags = 0;
+	beginInfo.pInheritanceInfo = nullptr;
+
+	if (vkBeginCommandBuffer(m_commandBuffer, &beginInfo) != VK_SUCCESS) {
+		throw std::runtime_error("Failed to begin recording command buffer");
+	}
+
+	auto recordInfo = details::makeInfo<VkRenderPassBeginInfo>();
+	recordInfo.renderPass = m_renderPass;
+	recordInfo.framebuffer = m_framebuffers[imageIndex];
+	recordInfo.renderArea.offset = {0, 0};
+	recordInfo.renderArea.extent = m_swapChainSetup.extent;
+
+	constexpr VkClearValue clearColor = {{{0.0f, 0.0f, 0.0f, 1.0f}}};
+	recordInfo.clearValueCount = 1;
+	recordInfo.pClearValues = &clearColor;
+
+	vkCmdBeginRenderPass(m_commandBuffer, &recordInfo, VK_SUBPASS_CONTENTS_INLINE);
+	vkCmdBindPipeline(m_commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipeline);
+
+	VkViewport viewport{};
+	viewport.x = 0.0f;
+	viewport.y = 0.0f;
+	viewport.width = static_cast<float>(m_swapChainSetup.extent.width);
+	viewport.height = static_cast<float>(m_swapChainSetup.extent.height);
+	viewport.minDepth = 0.0f;
+	viewport.maxDepth = 1.0f;
+	vkCmdSetViewport(m_commandBuffer, 0, 1, &viewport);
+
+	VkRect2D scissor{};
+	scissor.offset = {0, 0};
+	scissor.extent = m_swapChainSetup.extent;
+	vkCmdSetScissor(m_commandBuffer, 0, 1, &scissor);
+
+	vkCmdDraw(m_commandBuffer, 3, 1, 0, 0);
+	vkCmdEndRenderPass(m_commandBuffer);
+
+	if (vkEndCommandBuffer(m_commandBuffer) != VK_SUCCESS) {
+		throw std::runtime_error("Failed to end recording command buffer");
+	}
 }
 
 VulkanRenderer::~VulkanRenderer() {
 	vkDestroyPipeline(m_device, m_pipeline, nullptr);
 	vkDestroyPipelineLayout(m_device, m_pipelineLayout, nullptr);
 	vkDestroyRenderPass(m_device, m_renderPass, nullptr);
-	for (auto& view : m_views) {
+	for (const auto& view : m_views) {
 		vkDestroyImageView(m_device, view, nullptr);
 	}
 	vkDestroySwapchainKHR(m_device, m_swapChain, nullptr);
 	vkDestroyDevice(m_device, nullptr);
 	vkDestroyInstance(m_instance, nullptr);
+	for (const auto& framebuffer : m_framebuffers) {
+		vkDestroyFramebuffer(m_device, framebuffer, nullptr);
+	}
+	if (m_commandPool != VK_NULL_HANDLE) {
+		vkDestroyCommandPool(m_device, m_commandPool, nullptr);
+	}
+	vkDestroySemaphore(m_device, m_imageAvailableSemaphore, nullptr);
+	vkDestroySemaphore(m_device, m_renderFinishedSemaphore, nullptr);
+	vkDestroyFence(m_device, m_inFlightFence, nullptr);
+}
+
+void VulkanRenderer::drawFrame() const {
+	vkWaitForFences(m_device, 1, &m_inFlightFence, VK_TRUE, std::numeric_limits<uint64_t>::max());
+	vkResetFences(m_device, 1, &m_inFlightFence);
+
+	uint32_t imageIndex;
+	vkAcquireNextImageKHR(
+		m_device,
+		m_swapChain,
+		std::numeric_limits<uint64_t>::max(),
+		m_imageAvailableSemaphore,
+		VK_NULL_HANDLE,
+		&imageIndex);
+
+	vkResetCommandBuffer(m_commandBuffer, 0);
+	recordCommandBuffer(imageIndex);
+
+	auto submitInfo = details::makeInfo<VkSubmitInfo>();
+	const VkSemaphore waitSemaphores[] = {m_imageAvailableSemaphore};
+	constexpr VkPipelineStageFlags waitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+	submitInfo.waitSemaphoreCount = 1;
+	submitInfo.pWaitSemaphores = waitSemaphores;
+	submitInfo.pWaitDstStageMask = waitStages;
+	submitInfo.commandBufferCount = 1;
+	submitInfo.pCommandBuffers = &m_commandBuffer;
+
+	const VkSemaphore signalSemaphores[] = {m_renderFinishedSemaphore};
+	submitInfo.signalSemaphoreCount = 1;
+	submitInfo.pSignalSemaphores = signalSemaphores;
+
+	if (vkQueueSubmit(m_graphicsQueue, 1, &submitInfo, m_inFlightFence) != VK_SUCCESS) {
+		throw std::runtime_error("Failed to submit draw command buffer");
+	}
+
+	auto presentInfo = details::makeInfo<VkPresentInfoKHR>();
+	presentInfo.waitSemaphoreCount = 1;
+	presentInfo.pWaitSemaphores = signalSemaphores;
+
+	const VkSwapchainKHR swapChains[] = {m_swapChain};
+	presentInfo.swapchainCount = 1;
+	presentInfo.pSwapchains = swapChains;
+	presentInfo.pImageIndices = &imageIndex;
+	presentInfo.pResults = nullptr;
+
+	vkQueuePresentKHR(m_graphicsQueue, &presentInfo);
 }
 
 } // namespace wasabi::rendering

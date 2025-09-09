@@ -1,7 +1,6 @@
 
 #pragma once
 
-
 #ifdef _WIN32
 #include <windows.h>
 
@@ -17,9 +16,14 @@ struct WindowHandle {
 #endif
 
 #ifdef __APPLE__
+
+#if !defined(__OBJC__)
 using CAMetalLayer = void;
+struct NSWindow;
 
 struct WindowHandle {
     CAMetalLayer* caMetalLayer;
 };
+#endif
+
 #endif
