@@ -33,6 +33,8 @@ add_library(wasabi-engine-lib STATIC
         Scene.cpp
 )
 
+target_compile_definitions(wasabi-engine-lib PRIVATE WASABI_SHADER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/shaders")
+
 
 
 add_executable(wasabi-engine-main

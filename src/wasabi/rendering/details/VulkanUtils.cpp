@@ -163,7 +163,9 @@ std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtens
 	createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 	createInfo.pApplicationInfo = &appInfo;
 	// createInfo.enabledLayerCount = 0;
-	createInfo.flags = VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR; // TODO: make it more generic because this flag is macos specific
+#ifdef __APPLE__
+	createInfo.flags = VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
+#endif
 	createInfo.enabledExtensionCount = static_cast<uint32_t>(requiredExtensions.size());
 	createInfo.ppEnabledExtensionNames = requiredExtensions.data();
 	createInfo.enabledLayerCount = 0;
@@ -175,6 +177,7 @@ std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtens
 		return {};
 	}
 
+#ifdef __APPLE__
 	PFN_vkCreateMetalSurfaceEXT pfn_before = vkCreateMetalSurfaceEXT;
 	std::cout << "[DIAGNOSTYKA] Wskaźnik PRZED volkLoadInstance: " << (void*)pfn_before << std::endl;
 	volkLoadInstance(vkInstance);
@@ -201,7 +204,9 @@ std::optional<VkInstance> createVkInstance(const ExtensionsNames& requiredExtens
 		std::cout << "KATASTROFA: Nawet wskaźnik do vkGetInstanceProcAddr jest nieprawidłowy! Błąd w volkInitialize()." << std::endl;
 	}
 	std::cout << "------------------------------------" << std::endl;
-
+#else
+	volkLoadInstance(vkInstance);
+#endif
 
 	return vkInstance;
 }

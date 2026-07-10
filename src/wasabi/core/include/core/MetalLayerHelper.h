@@ -6,6 +6,8 @@
 
 #include <GLFW/glfw3.h>
 
+#ifdef __APPLE__
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -15,3 +17,5 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
+#endif // __APPLE__

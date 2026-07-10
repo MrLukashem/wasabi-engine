@@ -6,8 +6,10 @@
 
 #include "platform/WindowHandle.hpp"
 
+#ifdef __APPLE__
 #ifdef __cplusplus
 
 CAMetalLayer* getMetalLayer(NSWindow* window);
 
+#endif
 #endif

@@ -3,8 +3,7 @@
 SET(CMAKE_CXX_FLAGS "-std=c++20")
 
 
-find_package(glm REQUIRED)
-find_package(vulkan REQUIRED)
+find_package(Vulkan REQUIRED)
 
 add_library(
 		wasabi-rendering STATIC
@@ -15,12 +14,10 @@ add_library(
 		details/macos/VulkanMacOsUtils.cpp
 		VulkanRenderer.cpp)
 
-include_directories("/opt/homebrew/Cellar/glm/0.9.9.8/include")
-
 target_link_libraries(wasabi-rendering
 		PUBLIC
 			volk
-			vulkan
+			Vulkan::Vulkan
 			glm::glm
 		PRIVATE
 			wasabi-utils

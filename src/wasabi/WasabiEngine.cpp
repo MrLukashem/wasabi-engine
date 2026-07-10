@@ -41,11 +41,11 @@ void WasabiEngine::loop() noexcept {
 		{
 			rendering::ShaderInfo{
 				.stage = rendering::ShaderStage::Vertex,
-				.path = "/Users/ryuu/Projects/wasabi-engine/src/wasabi/shaders/vert.spv"
+				.path = std::string(WASABI_SHADER_DIR) + "/vert.spv"
 			},
 			rendering::ShaderInfo{
 				.stage = rendering::ShaderStage::Fragment,
-				.path = "/Users/ryuu/Projects/wasabi-engine/src/wasabi/shaders/frag.spv"
+				.path = std::string(WASABI_SHADER_DIR) + "/frag.spv"
 			}
 		}
 	};

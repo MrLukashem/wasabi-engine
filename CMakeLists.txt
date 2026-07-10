@@ -11,6 +11,7 @@ set(volk_DIR ${PROJECT_SOURCE_DIR}/external/volk/cmake)
 
 find_package(Vulkan REQUIRED)
 
+add_subdirectory(external/glm)
 add_subdirectory(${SOURCE_ROOT})
 
 if(APPLE)
@@ -21,7 +22,7 @@ if(APPLE)
     add_compile_definitions(VK_USE_PLATFORM_MACOS_MVK)
     add_compile_definitions(VK_USE_PLATFORM_METAL_EXT)
 elseif(UNIX AND NOT APPLE)
-    find_package(spdlog REQUIRED)
+    set(GLFW_USE_WAYLAND ON CACHE BOOL "Build GLFW with Wayland support" FORCE)
     #set(SFML_DIR ${PROJECT_SOURCE_DIR}/external/SFML/cmake/)
     #set(SPDLOG_ROOT ${PROJECT_SOURCE_DIR}/external/spdlog/build/CMakeFiles/Export/lib/cmake/spdlog)
     #set(spdlog_DIR ${PROJECT_SOURCE_DIR}/external/spdlog/out/install/x64-Debug/lib/cmake/spdlog)

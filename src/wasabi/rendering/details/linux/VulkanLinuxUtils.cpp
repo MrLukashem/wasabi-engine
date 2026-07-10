@@ -12,10 +12,11 @@
 
 namespace wasabi::rendering::details {
 
-std::optional<VkSurfaceKHR> createVkSurfaceInternal(VkInstance instance, WindowHandle nativeHandle) {
+std::optional<VkSurfaceKHR> createVkSurface(VkInstance instance, WindowHandle nativeHandle) {
     VkWaylandSurfaceCreateInfoKHR info{};
+    info.sType = VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR;
     info.display = nativeHandle.wlDisplay;
-    info.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
+    info.surface = nativeHandle.wlSurface;
 
     VkSurfaceKHR surface{};
     if (vkCreateWaylandSurfaceKHR(instance, &info, nullptr, &surface) != VK_SUCCESS) {
@@ -25,9 +26,9 @@ std::optional<VkSurfaceKHR> createVkSurfaceInternal(VkInstance instance, WindowH
     return surface;
 }
 
-details::ExtensionsNames getPlatformExtensionsInternal() {
+ExtensionsNames getPlatformExtensionsInternal() {
     return {
-        VK_KHR_WAYLAND_SURFACE_EXTENSION_NAME
+        VK_KHR_WAYLAND_SURFACE_EXTENSION_NAME,
         VK_KHR_SURFACE_EXTENSION_NAME,
         VK_EXT_DEBUG_REPORT_EXTENSION_NAME
     };

@@ -13,6 +13,11 @@
 #include "OnCloseEvent.hpp"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
+#ifdef __linux__
+#define GLFW_EXPOSE_NATIVE_WAYLAND
+#include <GLFW/glfw3native.h>
+#endif
+
 namespace wasabi::core {
 
 namespace {
@@ -94,6 +99,8 @@ WindowHandle GLFWWindow::getNativeHandle() const noexcept {
     }
 #if defined(__APPLE__)
     return WindowHandle{createMetalLayer(m_glfwWindow.get())};
+#elif defined(__linux__)
+    return WindowHandle{glfwGetWaylandDisplay(), glfwGetWaylandWindow(m_glfwWindow.get())};
 #endif
 
     return WindowHandle{nullptr};

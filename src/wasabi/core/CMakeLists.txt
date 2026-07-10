@@ -1,24 +1,28 @@
 
-#find_package(spdlog REQUIRED)
-find_package(glm REQUIRED)
-find_package(glfw3 REQUIRED)
-
 #set(SFML_INCLUDE ${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/include)
 #include_directories(wasabi-engine-main ${SFML_INCLUDE})
 set(BUILD_SHARED_LIBS OFF)
 #link_directories(${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/lib)
 #set(SFML_INCLUDE ${PROJECT_SOURCE_DIR}/external/SFML-prebuilt/SFML-2.5.1/include)
 #link_directories( ${PROJECT_SOURCE_DIR}/external/spdlog/build)
-add_library(core STATIC
-		"MetalLayerHelper.mm"
+set(CORE_SOURCES
 		"WindowBuilder.cpp"
-		"SFMLWindow.cpp"
 		"GLFWWindow.cpp"
 		"include/core/EventsStack.hpp"
 		"include/core/Event.hpp" "include/core/EventVisitor.hpp" "include/core/MouseClickEvent.hpp"  "EventsStack.cpp" "include/core/OnCloseEvent.hpp" "details/Container.cpp"
 		include/core/MetalLayerHelper.h
 		include/core/GLFWKeyEvent.h
 )
+
+if (APPLE)
+	list(APPEND CORE_SOURCES "MetalLayerHelper.mm")
+endif()
+
+if (WIN32)
+	list(APPEND CORE_SOURCES "SFMLWindow.cpp")
+endif()
+
+add_library(core STATIC ${CORE_SOURCES})
 
 target_include_directories(core PUBLIC include include/core ${COMPONENTS_INCLUDE} ${PLATFORM_INCLUDE} ${UTILS_INCLUDE} PRIVATE ${GLM_INCLUDE_DIRS} ${RENDERING_INCLUDES})
 

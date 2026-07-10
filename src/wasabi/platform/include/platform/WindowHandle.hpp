@@ -9,9 +9,11 @@ using WindowHandle = HWND;
 
 #ifdef  __linux__
 struct wl_display;
+struct wl_surface;
 
 struct WindowHandle {
     wl_display* wlDisplay;
+    wl_surface* wlSurface;
 };
 #endif
 

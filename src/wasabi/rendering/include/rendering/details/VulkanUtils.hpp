@@ -7,8 +7,10 @@
 #include "utils/defs.hpp"
 
 // #include <vulkan/vulkan.h>
+#ifdef __APPLE__
 #define VK_USE_PLATFORM_METAL_EXT
 #define VK_USE_PLATFORM_MACOS_MVK
+#endif
 #include <volk.h>
 
 #include <algorithm>
