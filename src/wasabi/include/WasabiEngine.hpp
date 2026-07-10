@@ -2,26 +2,29 @@
 #pragma once
 
 #include "Window.hpp"
+#include "Scene.hpp"
 #include "EventVisitor.hpp"
 #include "ecs/WorldSupervisor.hpp"
 
 #include <memory>
 
 
-namespace wasabi::core {
+namespace wasabi {
 
 //struct Window;
 
-class WasabiEngine : public EventVisitor {
+class WasabiEngine : public core::EventVisitor {
 public:
-	WasabiEngine(std::shared_ptr<Window> window);
+	explicit WasabiEngine(std::shared_ptr<core::Window> window);
 	~WasabiEngine();
 
 	WasabiEngine(const WasabiEngine&) = delete;
 	WasabiEngine(WasabiEngine&&) = default;
 
-	WasabiEngine& operator=(const WasabiEngine&) = delete;
+	WasabiEngine& operator=(const WasabiEngine&);
 	WasabiEngine& operator=(WasabiEngine&&) = default;
+
+	void setScene(std::unique_ptr<Scene> scene) noexcept;
 
 	ecs::Entity createEntity() noexcept;
 
@@ -38,12 +41,13 @@ public:
 		m_world.dettach(entity, std::forward<C>(component));
 	}
 
-	void visit(MauseClickEvent& event) override;
-	void visit(OnCloseEvent& event) override;
+	void visit(core::MauseClickEvent& event) override;
+	void visit(core::OnCloseEvent& event) override;
 private:
 	bool m_running;
 	ecs::WorldSupervisor m_world;
-	std::shared_ptr<Window> m_window;
+	std::shared_ptr<core::Window> m_window;
+	std::unique_ptr<Scene> m_scene;
 };
 
-} // namespace wasabi::core
+} // namespace wasabi

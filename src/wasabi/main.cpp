@@ -1,30 +1,41 @@
 
-#include <iostream>
-#include <vector>
-#include "Scene.hpp"
+#include "include/Scene.hpp"
+#include "include/WasabiEngine.hpp"
 #include "WindowBuilder.hpp"
 
-class ExampleScene : public wasabi::Scene {
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
+
+
+class DemoScene final: public wasabi::Scene {
 public:
-	ExampleScene() {
-		setWindow();
+	void onAttach(wasabi::ecs::WorldSupervisor* world) override {
+		log->info("onAttach");
+
+		createTriangle(
+			{1.0, 0.0, 0.0},
+			{0.0, 1.0, 0.0},
+			{0.0, 0.0, 1.0});
 	}
 
-	void setWindow() noexcept {
-		auto window = wasabi::core::WindowBuilder::create()
-			.width(800)
-			.height(600)
-			.title("Wasabi Window")
-			.build();
-
-		Scene::setWindow(std::move(window));
+	void onDetach() override {
+		log->info("onDetach");
 	}
+
+	void onUpdate(float dt) noexcept override {
+	}
+private:
+	std::shared_ptr<spdlog::logger> log = spdlog::stdout_color_mt("DemoScene");
 };
 
-
 int main() {
-	std::vector<int> vec;
+	auto window = wasabi::core::WindowBuilder::create()
+		.width(800)
+		.height(600)
+		.title("Demo Window")
+		.build();
 
-	ExampleScene scene{};
-	scene.loop();
+	wasabi::WasabiEngine engine{std::move(window)}; // TODO: The engine should take it as uptr
+	engine.setScene(std::make_unique<DemoScene>());
+	engine.loop();
 }

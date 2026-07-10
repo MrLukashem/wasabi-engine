@@ -29,7 +29,11 @@ include_directories(include)
 
 # add the executable
 add_library(wasabi-engine-lib STATIC
-    Scene.cpp)
+        WasabiEngine.cpp
+        Scene.cpp
+)
+
+
 
 add_executable(wasabi-engine-main
     main.cpp)
@@ -61,8 +65,12 @@ if (UNIX)
     target_link_libraries(wasabi-engine-lib
             wasabi-ecs
             wasabi-rendering
-            core)
+            core
+            spdlog
+    )
 endif(UNIX)
 
-target_link_libraries(wasabi-engine-main wasabi-engine-lib)
+target_link_libraries(wasabi-engine-main
+        wasabi-engine-lib
+)
 

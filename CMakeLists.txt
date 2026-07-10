@@ -35,4 +35,4 @@ endif()
 add_subdirectory(external/spdlog)
 add_subdirectory(external/glfw)
 add_subdirectory(external/volk)
-
+add_subdirectory(external/VulkanMemoryAllocator)

@@ -291,4 +291,7 @@ VkSubmitInfo makeInfo<VkSubmitInfo>();
 template <>
 VkPresentInfoKHR makeInfo<VkPresentInfoKHR>();
 
+template <>
+VkBufferCreateInfo makeInfo<VkBufferCreateInfo>();
+
 } // namespace wasabi::rendering::details

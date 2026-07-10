@@ -543,5 +543,12 @@ VkPresentInfoKHR makeInfo<VkPresentInfoKHR>() {
 	return info;
 }
 
+template <>
+VkBufferCreateInfo makeInfo<VkBufferCreateInfo>() {
+	VkBufferCreateInfo info{};
+	info.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
+	return info;
+}
+
 } // namespace wasabi::rendering::details
 

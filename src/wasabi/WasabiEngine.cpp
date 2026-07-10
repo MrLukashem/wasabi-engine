@@ -11,21 +11,27 @@
 #include "components/Mesh.hpp"
 #include "rendering/VulkanRenderer.hpp"
 
-#include "spdlog/spdlog.h"
+#include "../../external/spdlog/include/spdlog/spdlog.h"
 
 
 namespace {
 
 } // namespace
 
-namespace wasabi::core {
+namespace wasabi {
 
+using namespace core;
 using Entity = ecs::Entity;
 
 WasabiEngine::WasabiEngine(std::shared_ptr<Window> window)
 	: m_running{false}, m_world{}, m_window{window} {}
 
 WasabiEngine::~WasabiEngine() = default;
+
+void WasabiEngine::setScene(std::unique_ptr<Scene> scene) noexcept {
+	m_scene = std::move(scene);
+	m_scene->onAttach(&m_world);
+}
 
 void WasabiEngine::loop() noexcept {
 	m_running = true;
@@ -56,6 +62,8 @@ void WasabiEngine::loop() noexcept {
 		}
 
 		renderer.drawFrame();
+
+		m_scene->onUpdate(0.0f);
 	}
 }
 

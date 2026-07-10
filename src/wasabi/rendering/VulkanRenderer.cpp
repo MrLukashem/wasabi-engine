@@ -6,12 +6,36 @@
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
+#define VMA_IMPLEMENTATION
+#include "vk_mem_alloc.h"
+
 #include <optional>
+#include <numeric>
 
 
 namespace {
 
 using namespace wasabi::rendering;
+
+uint32_t meshHandleCounter = 1;
+
+struct GPUMesh {
+	struct MeshAlloc {
+		uint32_t verticesOffset;
+		uint32_t verticesCount;
+		uint32_t verticesStride;
+		uint32_t indicesOffset;
+		uint32_t indicesCount;
+	};
+
+	VkBuffer verticesBuffer;
+	VmaAllocation verticesAllocation;
+
+	VkBuffer indicesBuffer;
+	VmaAllocation indicesAllocation;
+
+	std::unordered_map<MeshHandle, MeshAlloc> meshHandleToAllocationInfo;
+};
 
 auto logger = spdlog::stdout_color_mt("VulkanRenderer");
 
@@ -464,6 +488,128 @@ void VulkanRenderer::drawFrame() const {
 	presentInfo.pResults = nullptr;
 
 	vkQueuePresentKHR(m_graphicsQueue, &presentInfo);
+}
+
+VkCommandBuffer beginSingleTimeCommands(VkDevice device, VkCommandPool commandPool) {
+	VkCommandBufferAllocateInfo allocInfo{};
+	allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+	allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+	allocInfo.commandPool = commandPool;
+	allocInfo.commandBufferCount = 1;
+
+	VkCommandBuffer commandBuffer;
+	vkAllocateCommandBuffers(device, &allocInfo, &commandBuffer);
+
+	VkCommandBufferBeginInfo beginInfo{};
+	beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+	beginInfo.flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
+
+	vkBeginCommandBuffer(commandBuffer, &beginInfo);
+	return commandBuffer;
+}
+
+void endSingleTimeCommands(VkDevice device, VkQueue queue,
+						   VkCommandPool commandPool, VkCommandBuffer commandBuffer) {
+	vkEndCommandBuffer(commandBuffer);
+
+	VkSubmitInfo submitInfo{};
+	submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+	submitInfo.commandBufferCount = 1;
+	submitInfo.pCommandBuffers = &commandBuffer;
+
+	vkQueueSubmit(queue, 1, &submitInfo, VK_NULL_HANDLE);
+	vkQueueWaitIdle(queue);
+
+	vkFreeCommandBuffers(device, commandPool, 1, &commandBuffer);
+}
+
+std::optional<MeshHandle> VulkanRenderer::uploadMeshBatch(const std::vector<Mesh> &meshes) {
+	const std::size_t bufferSize = std::reduce(
+	meshes.begin(),
+	meshes.end(),
+	0,
+	[] (const std::size_t result, const Mesh& rh) {
+		return rh.vertices.size() * sizeof(Vertex)
+			+ rh.indices.size() * sizeof(uint32_t)
+			+ result;
+	});
+
+	VkBuffer stagingBuffer;
+	auto stagingBufferCreateInfo = details::makeInfo<VkBufferCreateInfo>();
+	stagingBufferCreateInfo.size = bufferSize;
+	stagingBufferCreateInfo.usage = VK_BUFFER_USAGE_TRANSFER_SRC_BIT;
+	stagingBufferCreateInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+
+	VmaAllocator stagingAllocator{};
+	VmaAllocation stagingBufferAllocation;
+	VmaAllocationInfo stagingBufferInfo;
+	VmaAllocationCreateInfo stagingBufferAllocInfo{};
+	stagingBufferAllocInfo.usage = VMA_MEMORY_USAGE_CPU_ONLY;
+
+	vmaCreateBuffer(
+		stagingAllocator,
+		&stagingBufferCreateInfo,
+		&stagingBufferAllocInfo,
+		&stagingBuffer,
+		&stagingBufferAllocation,
+		&stagingBufferInfo);
+
+	void* mappedData;
+	vmaMapMemory(stagingAllocator, stagingBufferAllocation, &mappedData);
+	memccpy(mappedData, meshes.data(), 0, bufferSize);
+	vmaUnmapMemory(stagingAllocator, stagingBufferAllocation);
+
+	VkBuffer buffer;
+	auto bufferCreateInfo = details::makeInfo<VkBufferCreateInfo>();
+	bufferCreateInfo.size = bufferSize;
+	bufferCreateInfo.usage = VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT;
+	bufferCreateInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+
+	const VmaAllocator allocator{};
+	VmaAllocation bufferAllocation;
+	VmaAllocationInfo bufferInfo;
+	VmaAllocationCreateInfo bufferAllocInfo{};
+	bufferAllocInfo.usage = VMA_MEMORY_USAGE_GPU_ONLY;
+
+	vmaCreateBuffer(
+		allocator,
+		&bufferCreateInfo,
+		&bufferAllocInfo,
+		&buffer,
+		&bufferAllocation,
+		&bufferInfo);
+
+	const auto commandBuffer = beginSingleTimeCommands(m_device, m_commandPool);
+
+	VkBufferCopy copyRegion{};
+	copyRegion.size = bufferSize;
+	vkCmdCopyBuffer(commandBuffer, stagingBuffer, buffer, 1, &copyRegion);
+
+	endSingleTimeCommands(m_device, m_graphicsQueue, m_commandPool, commandBuffer);
+
+	vmaDestroyBuffer(stagingAllocator, stagingBuffer, stagingBufferAllocation);
+
+	GPUMesh gpuMesh{};
+	gpuMesh.verticesBuffer = buffer;
+	gpuMesh.verticesAllocation = bufferAllocation;
+
+	uint32_t verticesOffset = 0;
+	uint32_t indicesOffset = 0;
+	for (const auto& mesh : meshes) {
+		GPUMesh::MeshAlloc meshAlloc {
+			.verticesCount = static_cast<uint32_t>(mesh.vertices.size()),
+			.verticesOffset = verticesOffset,
+			.verticesStride = sizeof(Vertex),
+			.indicesCount =	static_cast<uint32_t>(mesh.indices.size()),
+			.indicesOffset = indicesOffset
+		};
+
+		verticesOffset += verticesOffset + meshAlloc.verticesCount * meshAlloc.verticesStride;
+		indicesOffset += indicesOffset + meshAlloc.indicesCount * sizeof(uint32_t);
+
+		MeshHandle handle{meshHandleCounter++};
+		gpuMesh.meshHandleToAllocationInfo[handle] = meshAlloc;
+	}
 }
 
 } // namespace wasabi::rendering

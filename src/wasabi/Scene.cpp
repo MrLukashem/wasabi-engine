@@ -1,37 +1,40 @@
-
 #include "Scene.hpp"
 
-#include "core/Window.hpp"
-#include "core/WasabiEngine.hpp"
-#include "core/WindowBuilder.hpp"
+#include "components/Shape.hpp"
 
 
 namespace wasabi {
+
+using components::Shape;
 
 Scene::Scene() = default;
 
 Scene::~Scene() = default;
 
-void Scene::setWindow(std::unique_ptr<core::Window> window) noexcept {
-	if (window == nullptr) {
-		return;
-	}
-
-	m_window = std::move(window);
-	m_engine = std::make_unique<core::WasabiEngine>(m_window);
+Object& Scene::createObject(const std::string& name) noexcept {
+    m_objects.emplace_back(m_world->createEntity(), m_world);
+    return m_objects.back();
 }
 
-void Scene::show() noexcept {
-	if (m_window == nullptr) {
-		return;
-	}
+Object& Scene::createTriangle(const glm::vec3& p1, const glm::vec3& p2, const glm::vec3& p3) noexcept {
+    auto &obj = createObject("Triangle");
+    obj.addComponent<Shape>(Shape::Triangle{p1, p2, p3});
 
-	m_window->show();
+    return obj;
 }
 
-void Scene::loop() noexcept {
-	m_engine->loop();
+Object& Scene::createRectangle(const glm::vec3& pos, const glm::vec2& size) noexcept {
+    auto &obj = createObject("Rectangle");
+    return obj;
+}
+
+Object& Scene::createCircle(const glm::vec3& pos, double radius) noexcept {
+    auto &obj = createObject("Circle");
+    return obj;
+}
+
+void Scene::destroyObject(Object& object) noexcept {
+    std::erase_if(m_objects, [&object](const Object &obj) { return obj == object; });
 }
 
 }
-

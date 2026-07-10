@@ -9,7 +9,7 @@
 
 namespace wasabi::ecs {
 
-class WorldSupervisor {
+class WorldSupervisor final {
 	using ComponentHash = std::size_t;
 	using Position = std::size_t; // ComponentPosInTag
 
@@ -19,7 +19,7 @@ public:
 
 	template <typename C>
 	void attach(const Entity entity, C&& component) noexcept {
-		m_componentsSupervisor.bind(std::forward<C>(component), entity);
+		m_componentsSupervisor.bind(entity, std::forward<C>(component));
 
 		m_hashToId[getHash<C>()] = ++m_componentIdCounter;
 		const auto& tag = m_entitiesSupervisor.updateTag(

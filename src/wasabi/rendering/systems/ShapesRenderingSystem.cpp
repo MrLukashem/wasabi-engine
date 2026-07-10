@@ -11,6 +11,8 @@
 
 namespace {
 
+using wasabi::Vertex;
+using wasabi::Mesh;
 using namespace wasabi::rendering;
 using namespace wasabi::components;
 
@@ -18,23 +20,32 @@ std::size_t makeHash(const Shape& shape) noexcept {
 	return std::hash<Shape::Data>{}(shape.data);
 }
 
-VertexArray createVertexArray(const Shape::Rectangle& rect) noexcept {
+Mesh createMesh(const Shape::Rectangle& rect) noexcept {
 	const float halfX = rect.size.x / 2.0f;
 	const float halfY = rect.size.y / 2.0f;
 	return {
-		Vertex{{-halfX, -halfY, .0f}, {.0f, .0f, .0f}},
-		Vertex{{-halfX, halfY, .0f}, {.0f, .0f, .0f}},
-		Vertex{{halfX, halfY, .0f}, {.0f, .0f, .0f}},
-		Vertex{{halfX, -halfY, .0f}, {.0f, .0f, .0f}},
+		// Vertex{{-halfX, -halfY, .0f}, {.0f, .0f, .0f}},
+		// Vertex{{-halfX, halfY, .0f}, {.0f, .0f, .0f}},
+		// Vertex{{halfX, halfY, .0f}, {.0f, .0f, .0f}},
+		// Vertex{{halfX, -halfY, .0f}, {.0f, .0f, .0f}},
 	};
 }
 
-VertexArray createVertexArray(const Shape::Circle& circle) noexcept {
+Mesh createMesh(const Shape::Triangle& triangle) noexcept {
+	const auto t = triangle;
+	return {
+		// Vertex{{t.pos1.x, t.pos1.y, t.pos1.z}, {.0f, .0f, .0f}},
+		// Vertex{{t.pos2.x, t.pos2.y, t.pos2.z}, {.0f, .0f, .0f}},
+		// Vertex{{t.pos3.x, t.pos3.y, t.pos3.z}, {.0f, .0f, .0f}},
+	};
+}
+
+Mesh createMesh(const Shape::Circle& circle) noexcept {
 	return {};
 }
 
-VertexArray createVertexArray(const Shape& shape) noexcept {
-	return std::visit([] (auto&& shape) { return createVertexArray(shape); }, shape.data);
+Mesh createMesh(const Shape& shape) noexcept {
+	return std::visit([] (auto&& data) { return createMesh(data); }, shape.data);
 }
 
 } // namespace
@@ -49,20 +60,23 @@ ShapesRenderingSystem::ShapesRenderingSystem(ecs::WorldSupervisor& world)
 void ShapesRenderingSystem::render() noexcept {
 	m_world.each<Transform, Shape>([this](const auto entity) {
 		renderEntity(
+			entity,
 			m_world.get<Transform>(entity),
 			m_world.get<Shape>(entity));
 	});
 }
 
-void ShapesRenderingSystem::renderEntity(Transform& transform, Shape& shape) noexcept {
-	const auto hash = makeHash(shape);
-	const auto& arrayItr = m_verticesArrays.find(hash);
-	if (arrayItr == m_verticesArrays.end()) {
-		m_verticesArrays[hash] = createVertexArray(shape);
+void ShapesRenderingSystem::renderEntity(
+	const ecs::Entity entity,
+	const Transform& transform,
+	const Shape& shape)
+noexcept {
+	if (m_entityHashToGpuMesh.contains(entity)) {
+		return;
 	}
 
-	m_verticesArrays[hash];
+	const auto hash = makeHash(shape);
+	m_entityHashToMesh[hash] = createMesh(shape);
 }
-
 
 } // namespace wasabi::rendering

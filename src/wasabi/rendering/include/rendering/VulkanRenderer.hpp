@@ -1,6 +1,7 @@
 
 #pragma once
 
+#include "Math.hpp"
 #include "rendering/Renderer.hpp"
 #include "rendering/Shader.h"
 #include "rendering/details/VulkanUtils.hpp"
@@ -8,12 +9,16 @@
 
 namespace wasabi::rendering {
 
+enum class MeshHandle: uint32_t { kInvalid = 0 };
+
 class VulkanRenderer {
 public:
 	explicit VulkanRenderer(WindowHandle nativeHandle, const std::vector<ShaderInfo>& shaderInfos);
 	~VulkanRenderer();
 
 	void drawFrame() const;
+
+	std::optional<MeshHandle> uploadMeshBatch(const std::vector<Mesh>& meshes);
 private:
 	void createDevice();
 	void createSwapChain();

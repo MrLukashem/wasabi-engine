@@ -11,12 +11,11 @@ set(BUILD_SHARED_LIBS OFF)
 #link_directories( ${PROJECT_SOURCE_DIR}/external/spdlog/build)
 add_library(core STATIC
 		"MetalLayerHelper.mm"
-		"WasabiEngine.cpp"
 		"WindowBuilder.cpp"
 		"SFMLWindow.cpp"
 		"GLFWWindow.cpp"
 		"include/core/EventsStack.hpp"
-		"include/core/Event.hpp" "include/core/EventVisitor.hpp" "include/core/MouseClickEvent.hpp"  "EventsStack.cpp" "include/core/OnCloseEvent.hpp" "../include/Actor.hpp" "details/Container.cpp"
+		"include/core/Event.hpp" "include/core/EventVisitor.hpp" "include/core/MouseClickEvent.hpp"  "EventsStack.cpp" "include/core/OnCloseEvent.hpp" "details/Container.cpp"
 		include/core/MetalLayerHelper.h
 		include/core/GLFWKeyEvent.h
 )

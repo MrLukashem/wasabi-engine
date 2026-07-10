@@ -4,6 +4,7 @@
 #include "rendering/Renderer.hpp"
 #include "components/Transform.hpp"
 #include "components/Shape.hpp"
+#include "Math.hpp"
 
 #include <vector>
 #include <map>
@@ -15,22 +16,17 @@ class WorldSupervisor;
 
 namespace wasabi::rendering {
 
-struct Vertex {
-	glm::vec3 position;
-	glm::vec3 color;
-};
-
-using VertexArray = std::vector<Vertex>;
-
 class ShapesRenderingSystem {
 public:
-	ShapesRenderingSystem(ecs::WorldSupervisor& world);
+	explicit ShapesRenderingSystem(ecs::WorldSupervisor& world);
+
 	void render() noexcept;
 private:
-	void renderEntity(components::Transform& transform, components::Shape& shape) noexcept;
+	void renderEntity(std::size_t entity, const components::Transform& transform, const components::Shape& shape) noexcept;
 
 	ecs::WorldSupervisor& m_world;
-	std::map<std::size_t, VertexArray> m_verticesArrays;
+	std::map<std::size_t, Mesh> m_entityHashToMesh;
+	std::map<std::size_t, uint32_t> m_entityHashToGpuMesh;
 };
 
 } // namespace wasabi::rendering
